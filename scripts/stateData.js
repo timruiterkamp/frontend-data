@@ -15,10 +15,9 @@ Promise.all(files.map(url => d3.csv(url)))
 		const debtPerCountry = d3
 			.nest()
 			.key(d => d.TIME)
-			.rollup(v =>
-				v.map(d => ({ country: d.GEO, debt: d.Value, unit: d.UNIT }))
-			)
 			.entries(values[1])
+			.filter(d => d.key > 2015)
+			.map(d => d.values.map(items => ({ key: items.GEO, ...items })))
 
 		const populationPerCountry = d3
 			.nest()
@@ -35,11 +34,17 @@ Promise.all(files.map(url => d3.csv(url)))
 		return filteredDataObject
 	})
 	.then(filteredWorldData => {
-		console.log(filteredWorldData)
-		d3.nest()
-			.key(d => d.key)
-			.rollup(v => console.log(v))
-			.entries(filteredWorldData)
+		console.log('filteredworlddata', filteredWorldData)
+		// const filterYears = d3
+		// 	.nest()
+		// 	.key(d => d.key)
+		// 	.rollup(v => (Number(v) > 2014 ? v.value : v))
+		// 	.entries(filteredWorldData)
+		// console.log(filterYears)
+		// d3.nest()
+		// 	.key(d => d.key)
+		// 	.rollup(v => console.log(v.length > 1 ? v : ''))
+		// 	.entries(filteredWorldData)
 	})
 	.catch(err => err)
 
