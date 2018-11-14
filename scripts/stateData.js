@@ -17,7 +17,13 @@ Promise.all(files.map(url => d3.csv(url)))
 			.key(d => d.TIME)
 			.entries(values[1])
 			.filter(d => d.key > 2015)
-			.map(d => d.values.map(items => ({ key: items.GEO, ...items })))
+			.map(d =>
+				d.values.map(items => ({
+					key: items.GEO,
+					debt: items.Value,
+					...items
+				}))
+			)
 
 		const populationPerCountry = d3
 			.nest()
@@ -34,17 +40,28 @@ Promise.all(files.map(url => d3.csv(url)))
 		return filteredDataObject
 	})
 	.then(filteredWorldData => {
-		console.log('filteredworlddata', filteredWorldData)
-		// const filterYears = d3
-		// 	.nest()
-		// 	.key(d => d.key)
-		// 	.rollup(v => (Number(v) > 2014 ? v.value : v))
-		// 	.entries(filteredWorldData)
-		// console.log(filterYears)
-		// d3.nest()
-		// 	.key(d => d.key)
-		// 	.rollup(v => console.log(v.length > 1 ? v : ''))
-		// 	.entries(filteredWorldData)
+		const filterByCountry = d3
+			.nest()
+			.key(d => d.key)
+			.entries(filteredWorldData)
+			.filter(filterByName => filterByName.key.length > 2)
+			.filter(filterByData => filterByData.values.length > 2)
+			.map(items => ({
+				country: items.key,
+				debt: items.values.filter(d => d.UNIT == 'Million euro'),
+				lat: items.values.map(geolocation =>
+					typeof geolocation.value == 'object'
+						? geolocation.value[0].lat
+						: ''
+				),
+				long: items.values.map(geolocation =>
+					typeof geolocation.value == 'object'
+						? geolocation.value[0].long
+						: ''
+				)
+			}))
+
+		console.log('filterByCountry', filterByCountry)
 	})
 	.catch(err => err)
 
