@@ -67,7 +67,7 @@ button:hover {
     z-index: 10;
     width: 60vw;
     height: auto;
-    min-height: 45vh;
+    min-height: 24em;
     background-color: rgba(5, 9, 36, 1);
     left: 50%;
     top: 50%;

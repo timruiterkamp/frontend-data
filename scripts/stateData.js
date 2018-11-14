@@ -49,16 +49,20 @@ Promise.all(files.map(url => d3.csv(url)))
 			.map(items => ({
 				country: items.key,
 				debt: items.values.filter(d => d.UNIT == 'Million euro'),
-				lat: items.values.map(geolocation =>
-					typeof geolocation.value == 'object'
-						? geolocation.value[0].lat
-						: ''
-				),
-				long: items.values.map(geolocation =>
-					typeof geolocation.value == 'object'
-						? geolocation.value[0].long
-						: ''
-				)
+				lat: items.values
+					.map(geolocation =>
+						typeof geolocation.value == 'object'
+							? geolocation.value[0].lat
+							: ''
+					)
+					.pop(),
+				long: items.values
+					.map(geolocation =>
+						typeof geolocation.value == 'object'
+							? geolocation.value[0].long
+							: ''
+					)
+					.pop()
 			}))
 
 		console.log('filterByCountry', filterByCountry)
@@ -72,7 +76,7 @@ function analyze(error, data) {
 	console.log(data)
 }
 
-function filterByYear(d) {
-	return d.filter(item => item.key >= 2016)
+function checkIfObject(d) {
+	return typeof d == 'object'
 }
 var svg = d3.select('svg')
