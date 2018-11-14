@@ -1,0 +1,919 @@
+[
+	{
+		"author": [],
+		"title": "Noordtij ",
+		"language": "Nederlands",
+		"price": 7
+	},
+	{
+		"author": "David Lambert",
+		"title": "De missie ",
+		"language": "Nederlands",
+		"price": 9
+	},
+	{
+		"author": "Annelies Eulen",
+		"title": "Maanpaleis ",
+		"language": "Nederlands",
+		"price": 0
+	},
+	{
+		"author": "P.J. de Gier",
+		"title": "Vuurdoop ",
+		"language": "Nederlands",
+		"price": 13
+	},
+	{
+		"author": "Karin Dienaar",
+		"title": "De vrouwenverzamelaar ",
+		"language": "Nederlands",
+		"price": 9
+	},
+	{
+		"author": "Renée Vink",
+		"title": "De astronoom en de gazelle ",
+		"language": "Nederlands",
+		"price": 0
+	},
+	{
+		"author": [],
+		"title": "Liefde, Japan en wandtapijten ",
+		"language": "Nederlands",
+		"price": 18
+	},
+	{ "author": [], "title": "Iguana ", "language": "Nederlands", "price": 18 },
+	{
+		"author": "H.C.E. de Wit-Boonacker",
+		"title": "De hadji ",
+		"language": "Nederlands",
+		"price": 0
+	},
+	{
+		"author": "P.J. de Gier",
+		"title": "Vuurstorm ",
+		"language": "Nederlands",
+		"price": 5
+	},
+	{ "author": [], "title": "Tamtam ", "language": "Nederlands", "price": 27 },
+	{
+		"author": [],
+		"title": "Een hete kille zomer ",
+		"language": "Nederlands",
+		"price": 0
+	},
+	{
+		"author": [],
+		"title": "Levende cargo ",
+		"language": "Nederlands",
+		"price": 6
+	},
+	{
+		"author": "Esselien 't Hart",
+		"title": "Niets of niets ",
+		"language": "Nederlands",
+		"price": 0
+	},
+	{
+		"author": "Marjan Muusse",
+		"title": "Bedreigd geluk ",
+		"language": "Nederlands",
+		"price": 5
+	},
+	{
+		"author": [],
+		"title": "Reis door de Sahara ",
+		"language": "Nederlands",
+		"price": 0
+	},
+	{
+		"author": [],
+		"title": "Afdaling in de vulkaan ",
+		"language": "Nederlands",
+		"price": 6
+	},
+	{
+		"author": [],
+		"title": "Trammelant op Cactuseiland ",
+		"language": "Nederlands",
+		"price": 0
+	},
+	{
+		"author": "Roelof Posthuma",
+		"title": "Over bergen heen ",
+		"language": "Nederlands",
+		"price": 6
+	},
+	{
+		"author": [],
+		"title": "De commodore ",
+		"language": "Nederlands",
+		"price": 0
+	},
+	{
+		"author": "Steven Moffat",
+		"title": "De avonturen van Kuifje ",
+		"language": "Nederlands",
+		"price": 7
+	},
+	{
+		"author": [],
+		"title": "De rancho der X mysteries ",
+		"language": "Nederlands",
+		"price": 0
+	},
+	{
+		"author": "Parma van Loon",
+		"title": "C.C. Flanagans Trans-America-race ",
+		"language": "Nederlands",
+		"price": 4
+	},
+	{
+		"author": "Arthur H. Seelemann",
+		"title": "Het koninkrijk van deze wereld ",
+		"language": "Nederlands",
+		"price": 0
+	},
+	{
+		"author": "Joop Keesmaat",
+		"title": "De reis om de wereld in 80 dagen ",
+		"language": "Nederlands",
+		"price": 7
+	},
+	{
+		"author": "Carry van Bruggen",
+		"title": "De drie musketiers ",
+		"language": "Nederlands",
+		"price": 0
+	},
+	{
+		"author": "Dirk Jan Arensman",
+		"title": "Buskruit en kaneel ",
+		"language": "Nederlands",
+		"price": 5
+	},
+	{
+		"author": "Jean François Gigoux",
+		"title": "De avonturen van Gil Blas de Santillano ",
+		"language": "Nederlands",
+		"price": 0
+	},
+	{
+		"author": "Lilian Schreuder",
+		"title": "De eenzaamheid van Thomas Cave ",
+		"language": "Nederlands",
+		"price": 11
+	},
+	{
+		"author": "Hans de Vries",
+		"title": "Het goud van Natal ",
+		"language": "Nederlands",
+		"price": 0
+	},
+	{
+		"author": "Nadia Ramer",
+		"title": "Het geluk van een wijngaard ",
+		"language": "Nederlands",
+		"price": 12
+	},
+	{
+		"author": "Juliette de Wit",
+		"title": "Ontsnapt per ballon! ",
+		"language": "Nederlands",
+		"price": 0
+	},
+	{ "author": [], "title": "Pjotr ", "language": "Nederlands", "price": 16 },
+	{
+		"author": "Lorenzo Chiavini",
+		"title": "Reis door de tijd ",
+		"language": "Nederlands",
+		"price": 18
+	},
+	{
+		"author": "Lidwien Biekmann",
+		"title": "M.U.I.S. ",
+		"language": "Nederlands",
+		"price": 0
+	},
+	{
+		"author": "Giuseppe Facciotto",
+		"title": "Help, het regent stenen! ",
+		"language": "Nederlands",
+		"price": 4
+	},
+	{
+		"author": "Giuseppe Facciotto",
+		"title": "Het pruttelt onder mijn poten ",
+		"language": "Nederlands",
+		"price": 0
+	},
+	{
+		"author": "Giuseppe Facciotto",
+		"title": "Een berg op pootjes ",
+		"language": "Nederlands",
+		"price": 5
+	},
+	{
+		"author": "Tini Arkema",
+		"title": "De schat van de Zwarte Mummie ",
+		"language": "Nederlands",
+		"price": 0
+	},
+	{
+		"author": "Giuseppe Facciotto",
+		"title": "De verloren schat van Zi-Wat Zeerat ",
+		"language": "Nederlands",
+		"price": 0
+	},
+	{
+		"author": "Tini Arkema",
+		"title": "Het Rommelspook ",
+		"language": "Nederlands",
+		"price": 0
+	},
+	{
+		"author": "Tony Ross",
+		"title": "Opa vlucht ",
+		"language": "Nederlands",
+		"price": 0
+	},
+	{
+		"author": "Giuseppe Facciotto",
+		"title": "De verschrikkelijke sneeuwrat ",
+		"language": "Nederlands",
+		"price": 7
+	},
+	{
+		"author": "Emile Salomons",
+		"title": "De Milkshake Vampieren ",
+		"language": "Nederlands",
+		"price": 0
+	},
+	{
+		"author": "Silvia Bigolin",
+		"title": "Reis door de tijd ",
+		"language": "Nederlands",
+		"price": 18
+	},
+	{
+		"author": "Emile Salomons",
+		"title": "Zombie voetbal zorgen ",
+		"language": "Nederlands",
+		"price": 0
+	},
+	{
+		"author": "Ann De Bode",
+		"title": "Nikki en de neanderthalers ",
+		"language": "Nederlands",
+		"price": 7
+	},
+	{
+		"author": "Giuseppe Facciotto",
+		"title": "Het feest van de grote donder ",
+		"language": "Nederlands",
+		"price": 0
+	},
+	{
+		"author": "Jeffrey Burger",
+		"title": "De wonderbaarlijke avonturen van Gijs en opa ",
+		"language": "Nederlands",
+		"price": 12
+	},
+	{
+		"author": "Tony Ross",
+		"title": "De middernachtbende ",
+		"language": "Nederlands",
+		"price": 12
+	},
+	{
+		"author": [],
+		"title": "Broederschap van de Bok ",
+		"language": "Nederlands",
+		"price": 0
+	},
+	{
+		"author": "Lidwien Biekmann",
+		"title": "Aan de schitterende rand van de wereld ",
+		"language": "Nederlands",
+		"price": 10
+	},
+	{
+		"author": "Sandra C. Hessels",
+		"title": "Koning Roe ",
+		"language": "Nederlands",
+		"price": 0
+	},
+	{
+		"author": "Tony Ross",
+		"title": "Papa bandiet ",
+		"language": "Nederlands",
+		"price": 14
+	},
+	{
+		"author": "Mariella Manfré",
+		"title": "Sam Breker en het gevecht van de superschurken ",
+		"language": "Nederlands",
+		"price": 0
+	},
+	{
+		"author": "Alessandro Muscillo",
+		"title": "Naar de haaien! ",
+		"language": "Nederlands",
+		"price": 7
+	},
+	{
+		"author": "Alexandre Dumas",
+		"title": "De drie muisketiers ",
+		"language": "Nederlands",
+		"price": 0
+	},
+	{
+		"author": "Jesse Goossens",
+		"title": "Eigenlijk ben ik een flamingo ",
+		"language": "Nederlands",
+		"price": 10
+	},
+	{
+		"author": "Eef Gratama",
+		"title": "Tussen hemel en aarde ",
+		"language": "Nederlands",
+		"price": 0
+	},
+	{
+		"author": "Peter Abelsen",
+		"title": "Jamrachs menagerie ",
+		"language": "Nederlands",
+		"price": 0
+	},
+	{
+		"author": "Astrid Yskout",
+		"title": "Bezoek uit de oertijd ",
+		"language": "Nederlands",
+		"price": 0
+	},
+	{
+		"author": "Hans Kooijman",
+		"title": "Blauwe horizon ",
+		"language": "Nederlands",
+		"price": 14
+	},
+	{
+		"author": "Silvia Bigolin",
+		"title": "Reis door de tijd ",
+		"language": "Nederlands",
+		"price": 0
+	},
+	{
+		"author": "Tom Harper",
+		"title": "De prooi van de tijger ",
+		"language": "Nederlands",
+		"price": 11
+	},
+	{
+		"author": "Ria Winters",
+		"title": "Krijn ",
+		"language": "Nederlands",
+		"price": 11
+	},
+	{
+		"author": "Derek de Lint",
+		"title": "Nova Zembla ",
+		"language": "Nederlands",
+		"price": 0
+	},
+	{
+		"author": "Tony Ross",
+		"title": "Griezelbeer ",
+		"language": "Nederlands",
+		"price": 0
+	},
+	{
+		"author": "Hans Kooijman",
+		"title": "De elfde plaag ",
+		"language": "Nederlands",
+		"price": 10
+	},
+	{
+		"author": "Tini Arkema",
+		"title": "De dinoboutjes barbecue ",
+		"language": "Nederlands",
+		"price": 0
+	},
+	{
+		"author": "Wim Euverman",
+		"title": "Het geheim van de tempelier ",
+		"language": "Nederlands",
+		"price": 0
+	},
+	{
+		"author": [],
+		"title": "Triomf van de zon ",
+		"language": "Nederlands",
+		"price": 0
+	},
+	{ "author": [], "title": "Magiër ", "language": "Nederlands", "price": 8 },
+	{
+		"author": "Pierdomenico Baccalario",
+		"title": "Schateiland ",
+		"language": "Nederlands",
+		"price": 12
+	},
+	{
+		"author": "Jan H. Mysjkin",
+		"title": "De graaf van Montecristo ",
+		"language": "Nederlands",
+		"price": 0
+	},
+	{
+		"author": "Silvia Bigolin",
+		"title": "Reis door de tijd ",
+		"language": "Nederlands",
+		"price": 18
+	},
+	{
+		"author": [],
+		"title": "Woestijngod ",
+		"language": "Nederlands",
+		"price": 18
+	},
+	{
+		"author": [],
+		"title": "Gouden leeuw ",
+		"language": "Nederlands",
+		"price": 0
+	},
+	{
+		"author": "José Rijnaarts",
+		"title": "De wereldverzamelaar ",
+		"language": "Nederlands",
+		"price": 6
+	},
+	{
+		"author": "Danilo Barozzi",
+		"title": "Reis door de tijd ",
+		"language": "Nederlands",
+		"price": 18
+	},
+	{
+		"author": [],
+		"title": "De reis van de Gazelle ",
+		"language": "Nederlands",
+		"price": 0
+	},
+	{
+		"author": "Melvin",
+		"title": "Dit boek gaat niet over mevrouw Moes en haar kakkerlakken ",
+		"language": "Nederlands",
+		"price": 0
+	},
+	{ "author": [], "title": "Farao ", "language": "Nederlands", "price": 0 },
+	{
+		"author": "Tom Hodgson",
+		"title": "Tien torens diep ",
+		"language": "Nederlands",
+		"price": 0
+	},
+	{
+		"author": "S. Bree",
+		"title": "Vlammend veld, heftig hart ",
+		"language": "Nederlands",
+		"price": 8
+	},
+	{
+		"author": "Eef Gratama",
+		"title": "Een prins zonder koninkrijk ",
+		"language": "Nederlands",
+		"price": 0
+	},
+	{
+		"author": "Saskia van der Lingen",
+		"title": "De weduwe ",
+		"language": "Nederlands",
+		"price": 43
+	},
+	{
+		"author": "Wytske Roodbergen",
+		"title": "Van hier naar nergens met Lonely Planet ",
+		"language": "Nederlands",
+		"price": 0
+	},
+	{
+		"author": "Pieter Verhulst",
+		"title": "De reis om de wereld in 80 dagen ",
+		"language": "Nederlands",
+		"price": 7
+	},
+	{
+		"author": "Dorienke de Vries",
+		"title": "Kleine Rachel ",
+		"language": "Nederlands",
+		"price": 0
+	},
+	{
+		"author": "Marianne Gossije",
+		"title": "De verboden rivier ",
+		"language": "Nederlands",
+		"price": 8
+	},
+	{
+		"author": "Kiki Coumans",
+		"title": "Reis om de wereld in tachtig dagen ",
+		"language": "Nederlands",
+		"price": 0
+	},
+	{
+		"author": "Natascha Stenvert",
+		"title": "Daan de machinist ",
+		"language": "Nederlands",
+		"price": 9
+	},
+	{
+		"author": "Elise van Iterson",
+		"title": "Hans is kwijt ",
+		"language": "Nederlands",
+		"price": 0
+	},
+	{
+		"author": "Frank van der Knoop",
+		"title": "Koninkrijk ",
+		"language": "Nederlands",
+		"price": 6
+	},
+	{
+		"author": "Jan Fastenau",
+		"title": "De verzamelaar van verloren goed ",
+		"language": "Nederlands",
+		"price": 11
+	},
+	{
+		"author": "Mark Janssen",
+		"title": "Kodo, de weg van de boog ",
+		"language": "Nederlands",
+		"price": 0
+	},
+	{
+		"author": "Marjolijn Wildschut",
+		"title": "De Rode Pimpernel ",
+		"language": "Nederlands",
+		"price": 8
+	},
+	{
+		"author": "An van 't Oosten",
+		"title": "In het spoor van de Rode Leeuw ",
+		"language": "Nederlands",
+		"price": 9
+	},
+	{
+		"author": "Jacques Meerman",
+		"title": "De roofvogels ",
+		"language": "Nederlands",
+		"price": 0
+	},
+	{
+		"author": "Hans Kooijman",
+		"title": "Moesson ",
+		"language": "Nederlands",
+		"price": 9
+	},
+	{
+		"author": "An van 't Oosten",
+		"title": "In naam van de vrijheid ",
+		"language": "Nederlands",
+		"price": 7
+	},
+	{
+		"author": [],
+		"title": "De mijnen van koning Salomo ",
+		"language": "Nederlands",
+		"price": 0
+	},
+	{
+		"author": [],
+		"title": "Vikingzoon ",
+		"language": "Nederlands",
+		"price": 7
+	},
+	{
+		"author": [],
+		"title": "Het Tolhuis ",
+		"language": "Nederlands",
+		"price": 6
+	},
+	{
+		"author": "Frank van der Knoop",
+		"title": "Arend ",
+		"language": "Nederlands",
+		"price": 0
+	},
+	{
+		"author": "Frank van der Knoop",
+		"title": "Heilige Oorlog ",
+		"language": "Nederlands",
+		"price": 12
+	},
+	{
+		"author": "Saskia Martens",
+		"title": "De haarbal neemt wraak ",
+		"language": "Nederlands",
+		"price": 0
+	},
+	{
+		"author": "Roelof Posthuma",
+		"title": "Krijgsbanier van de Adelaars ",
+		"language": "Nederlands",
+		"price": 13
+	},
+	{
+		"author": "Hugo Kuipers",
+		"title": "De klauw van de valk ",
+		"language": "Nederlands",
+		"price": 0
+	},
+	{
+		"author": "Christien Jonkheer",
+		"title": "Heren van de weg ",
+		"language": "Nederlands",
+		"price": 5
+	},
+	{
+		"author": "Laurence Tramaux",
+		"title": "Het dodenrijk ",
+		"language": "Nederlands",
+		"price": 9
+	},
+	{
+		"author": "Mino Milani",
+		"title": "Schateiland en Ontvoerd ",
+		"language": "Nederlands",
+		"price": 0
+	},
+	{
+		"author": "J. Westerweel-Ybema",
+		"title": "Jakhalzen van het paradijs ",
+		"language": "Nederlands",
+		"price": 9
+	},
+	{
+		"author": [],
+		"title": "Rochette uit Duinkerken ",
+		"language": "Nederlands",
+		"price": 0
+	},
+	{
+		"author": [],
+		"title": "De Barbarijse kerkers ",
+		"language": "Nederlands",
+		"price": 28
+	},
+	{
+		"author": "Florian Wagner",
+		"title": "Chi Rho ",
+		"language": "Nederlands",
+		"price": 0
+	},
+	{
+		"author": [],
+		"title": "De meester van de Bailante ",
+		"language": "Nederlands",
+		"price": 24
+	},
+	{
+		"author": [],
+		"title": "De feeks van Montpézat ",
+		"language": "Nederlands",
+		"price": 0
+	},
+	{
+		"author": [],
+		"title": "Het wapen van Montauban ",
+		"language": "Nederlands",
+		"price": 7
+	},
+	{
+		"author": [],
+		"title": "Libertalia ",
+		"language": "Nederlands",
+		"price": 0
+	},
+	{
+		"author": "Mino Milani",
+		"title": "De tijger van Maleisië ",
+		"language": "Nederlands",
+		"price": 11
+	},
+	{
+		"author": "Michiel van Sleen",
+		"title": "Kruistocht ",
+		"language": "Nederlands",
+		"price": 0
+	},
+	{
+		"author": "Christian Perrissin",
+		"title": "De baai aan de oostkant ",
+		"language": "Nederlands",
+		"price": 0
+	},
+	{
+		"author": "Katelijne De Vuyst",
+		"title": "De leeuwenjager en Manet ",
+		"language": "Nederlands",
+		"price": 9
+	},
+	{
+		"author": "Derek de Lint",
+		"title": "Nova Zembla ",
+		"language": "Nederlands",
+		"price": 9
+	},
+	{
+		"author": "Eef Gratama",
+		"title": "Tussen hemel en aarde ",
+		"language": "Nederlands",
+		"price": 0
+	},
+	{
+		"author": "Esteban Mathieu",
+		"title": "De berg van de goden ",
+		"language": "Nederlands",
+		"price": 9
+	},
+	{
+		"author": "Christian Perrissin",
+		"title": "De zwarte engel van de Paramo ",
+		"language": "Nederlands",
+		"price": 0
+	},
+	{
+		"author": "Florian Wagner",
+		"title": "Chi Rho ",
+		"language": "Nederlands",
+		"price": 0
+	},
+	{
+		"author": "Florian Wagner",
+		"title": "Chi Rho ",
+		"language": "Nederlands",
+		"price": 0
+	},
+	{
+		"author": "Nathalie Sergeef",
+		"title": "De man van Kenzie's River ",
+		"language": "Nederlands",
+		"price": 0
+	},
+	{
+		"author": [],
+		"title": "De vloek van San Roque ",
+		"language": "Nederlands",
+		"price": 0
+	},
+	{
+		"author": "Suzanne Arkema",
+		"title": "De Glibberige Kwallenbende ",
+		"language": "Nederlands",
+		"price": 0
+	},
+	{
+		"author": [],
+		"title": "Robin Hood ",
+		"language": "Nederlands",
+		"price": 0
+	},
+	{
+		"author": [],
+		"title": "Robin Hood ",
+		"language": "Nederlands",
+		"price": 0
+	},
+	{
+		"author": "Cavan Scott",
+		"title": "Opstand ",
+		"language": "Nederlands",
+		"price": 22
+	},
+	{
+		"author": [],
+		"title": "Armin de paardenjongen ",
+		"language": "Nederlands",
+		"price": 0
+	},
+	{
+		"author": "Kris Eikelenboom",
+		"title": "Dat uitgerekend ík daarheen ging! ",
+		"language": "Nederlands",
+		"price": 0
+	},
+	{
+		"author": "Max Schuchart",
+		"title": "De voor- en tegenspoeden van de befaamde Moll Flanders die in Newgate werd geboren en tijdens een leven van voortdurende afwisseling gedurende zestig jaar, met uitzondering van haar jeugd, een hoer was, vijf keer huwde (waarvan een keer met haar eigen broer), twaalf jaar een dievegge en acht jaar een gedeporteerde misdadigster in Virginia was, tenslotte rijk werd, een eerlijk leven leidde, en als een boetvaardige stierf ",
+		"language": "Nederlands",
+		"price": 0
+	},
+	{
+		"author": "Jeannet Dekker",
+		"title": "Lonely Planet pakt weer uit ",
+		"language": "Nederlands",
+		"price": 6
+	},
+	{
+		"author": "Eef Gratama",
+		"title": "De rots van Tanios ",
+		"language": "Nederlands",
+		"price": 0
+	},
+	{
+		"author": "J. Westerweel",
+		"title": "De furie van de valk ",
+		"language": "Nederlands",
+		"price": 9
+	},
+	{
+		"author": "Laurence Tramaux",
+		"title": "Het mysterie van Baharia ",
+		"language": "Nederlands",
+		"price": 0
+	},
+	{
+		"author": "Pieter Cramer",
+		"title": "Zon, zee, weg ermee! ",
+		"language": "Nederlands",
+		"price": 3
+	},
+	{
+		"author": "David Butler",
+		"title": "Marco Polo ",
+		"language": "Nederlands",
+		"price": 3
+	},
+	{
+		"author": "Jeannet Dekker",
+		"title": "The best of Lonely Planet ",
+		"language": "Nederlands",
+		"price": 0
+	},
+	{
+		"author": [],
+		"title": "Het geheim van pater Brugman ",
+		"language": "Nederlands",
+		"price": 7
+	},
+	{
+		"author": "Ann Van Dyck",
+		"title": "De strijd van de skeletten ",
+		"language": "Nederlands",
+		"price": 0
+	},
+	{
+		"author": "Ann Van Dyck",
+		"title": "De mysterieuze griefer ",
+		"language": "Nederlands",
+		"price": 8
+	},
+	{
+		"author": "Ann Van Dyck",
+		"title": "De invasie van de endermannen ",
+		"language": "Nederlands",
+		"price": 0
+	},
+	{
+		"author": "Ann Van Dyck",
+		"title": "Schattenjagers in de problemen ",
+		"language": "Nederlands",
+		"price": 0
+	},
+	{
+		"author": "Ann Van Dyck",
+		"title": "Op zoek naar het diamanten zwaard ",
+		"language": "Nederlands",
+		"price": 0
+	},
+	{
+		"author": "Philippe Thirault",
+		"title": "Het bloed van de Mississippi ",
+		"language": "Nederlands",
+		"price": 7
+	},
+	{
+		"author": "Dick de Wilde",
+		"title": "Duivel in de mist ",
+		"language": "Nederlands",
+		"price": 0
+	},
+	{
+		"author": "Jenny Tuin",
+		"title": "Banco ",
+		"language": "Nederlands",
+		"price": 39
+	},
+	{
+		"author": "Frans Bruning",
+		"title": "Het Halidon complot ",
+		"language": "Nederlands",
+		"price": 6
+	},
+	{
+		"author": "Hanneke van Soest",
+		"title": "Paddington ",
+		"language": "Nederlands",
+		"price": 0
+	}
+]

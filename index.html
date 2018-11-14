@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Document</title>
+        <link href="styles/index.css" rel="stylesheet" />
+        <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v0.49.0/mapbox-gl.js"></script>
+        <link
+            href="https://api.tiles.mapbox.com/mapbox-gl-js/v0.49.0/mapbox-gl.css"
+            rel="stylesheet"
+        />
+    </head>
+    <body>
+        <div id="map"></div>
+        <section class="map-intro">
+            <div class="map-intro-content">
+                <h2>How much would it cost to pay off your state debt?</h2>
+                <p>
+                    Almost every country in Europa has a debt in some way, 
+                    the value of the debt scales from little debt to a very high debt.
+                </p>
+                <p>
+                    In this project I am trying to give a better insight in european debt
+                    and how much this would cost to each person that lives in the selected
+                    country. 
+                </p>
+                <button id="flyToLocation">Explore Europe</button>
+            </div>
+        </section>
+        <section class="map-section">
+            <div class="map-state-information">
+                <h2>Countries:</h2>
+                <section class="country-info">
+                    <label>Choose year</label>
+                    <select id="chooseYear"></select>
+                    <div class="">
+                        <h3>Staatsschuld: <span id="stateDebt"></span></h3>
+                    </div>
+                </section>
+                <button id='nextItem'>Go to a random country</button>
+            </div>
+        </section>
+        <script src="https://d3js.org/d3.v5.js"></script>
+        <script src="scripts/stateData.js"></script>
+        <script src="scripts/mapbox.js"></script>
+    </body>
+</html>
