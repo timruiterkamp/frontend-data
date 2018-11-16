@@ -25,8 +25,6 @@ const filterAllData = Promise.all(files.map(url => d3.csv(url)))
 				}))
 			)
 
-		console.log(values[1])
-
 		const populationPerCountry = d3
 			.nest()
 			.key(d => d['Country Name'])

@@ -8,25 +8,8 @@ const mapIntro = findElement('.map-intro')
 const mapSection = findElement('.map-section')
 
 filterAllData.then(data => {
-	initRangeSlider(data, '#rangeSlider')
 	initRandomCountrySelector(data)
 })
-
-// create range slider
-function initRangeSlider(data, selector) {
-	// support different years
-	const minYear = d3.min(data.map(d => d.debt[0].debt.replace(',', '')))
-	const maxYear = d3.max(data.map(d => d.debt[0].debt.replace(',', '')))
-	console.log(minYear, maxYear)
-	d3.select(selector)
-		.attr('max', minYear)
-		.attr('min', maxYear)
-		.attr('step', '1')
-		// .attr('id', 'year')
-		.on('input', function input() {
-			update()
-		})
-}
 
 // Event listeners
 flyToLocation.addEventListener('click', () => {
@@ -38,10 +21,7 @@ flyToLocation.addEventListener('click', () => {
 		zoom: 4,
 		bearing: 0,
 		speed: 0.7,
-		curve: 1,
-		easing: function(t) {
-			return t
-		}
+		curve: 1
 	})
 	setTimeout(() => {
 		mapSection.style = 'transform: translateX(0);'
@@ -53,6 +33,13 @@ function initRandomCountrySelector(data) {
 		const randomCountry = data[Math.floor(Math.random() * data.length)]
 		map.flyTo({ center: [randomCountry.long, randomCountry.lat] })
 	})
+}
+
+function onchange() {
+	selectValue = d3.select('#mapDataFilter').property('value')
+	d3.select('body')
+		.append('p')
+		.text(selectValue + ' is the last selected option.')
 }
 
 function findElement(d) {
