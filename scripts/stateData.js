@@ -4,7 +4,7 @@ const files = [
 	'../data/totalPopulation.csv'
 ]
 
-Promise.all(files.map(url => d3.csv(url)))
+const filterAllData = Promise.all(files.map(url => d3.csv(url)))
 	.then(values => {
 		const geoCodePerCountry = d3
 			.nest()
@@ -24,6 +24,8 @@ Promise.all(files.map(url => d3.csv(url)))
 					...items
 				}))
 			)
+
+		console.log(values[1])
 
 		const populationPerCountry = d3
 			.nest()
@@ -65,18 +67,10 @@ Promise.all(files.map(url => d3.csv(url)))
 					.pop()
 			}))
 
-		console.log('filterByCountry', filterByCountry)
+		return filterByCountry
 	})
 	.catch(err => err)
 
-function analyze(error, data) {
-	if (error) {
-		console.log(error)
-	}
-	console.log(data)
-}
+const checkIfObject = d => typeof d == 'object'
 
-function checkIfObject(d) {
-	return typeof d == 'object'
-}
-var svg = d3.select('svg')
+export { filterAllData, checkIfObject }

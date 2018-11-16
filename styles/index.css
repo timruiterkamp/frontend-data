@@ -104,3 +104,7 @@ button:hover {
     padding: 2em;
     color: white;
 }
+
+.country-info {
+    display: none;
+}

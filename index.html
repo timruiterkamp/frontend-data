@@ -31,7 +31,11 @@
         </section>
         <section class="map-section">
             <div class="map-state-information">
-                <h2>Countries:</h2>
+                <section class="country-display">
+                    <h2>Countries:</h2> 
+                    <input type="range" id="rangeSlider">
+                    <div id="countries"></div>
+                </section>
                 <section class="country-info">
                     <label>Choose year</label>
                     <select id="chooseYear"></select>
@@ -43,7 +47,8 @@
             </div>
         </section>
         <script src="https://d3js.org/d3.v5.js"></script>
-        <script src="scripts/stateData.js"></script>
-        <script src="scripts/mapbox.js"></script>
+        <script type="module" src="scripts/stateData.js"></script>
+        <script type="module" src="scripts/mapbox.js"></script>
+        <script type="module" src="scripts/interactions.js"></script>
     </body>
 </html>
