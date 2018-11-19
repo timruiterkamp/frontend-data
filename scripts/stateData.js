@@ -49,6 +49,9 @@ const filterAllData = Promise.all(files.map(url => d3.csv(url)))
 			.map(items => ({
 				country: items.key,
 				debt: items.values.filter(d => d.UNIT == 'Million euro'),
+				population: items.values.filter(d =>
+					d.value > 500 ? d.value : ''
+				),
 				lat: items.values
 					.map(geolocation =>
 						typeof geolocation.value == 'object'

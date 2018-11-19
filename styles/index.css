@@ -29,15 +29,22 @@ svg {
 }
 
 circle {
-    fill: #e55e5e;
-    stroke: #e55e5e;
+    fill: #00bcd4;
+    stroke: #00bcd4;
     stroke-width: 0;
     cursor: pointer;
     transition: 0.5s fill, 0.5s stroke-width;
 }
 circle:hover {
-    fill: #5e5ee5;
-    stroke-width: 18;
+    fill: #fff;
+    stroke-width: 10;
+}
+
+#mapDataFilter {
+    width: 70%;
+    height: 3em;
+    background-color: transparent;
+    color: #fff;
 }
 
 button {
@@ -107,4 +114,32 @@ button:hover {
 
 .country-info {
     display: none;
+}
+
+#countries ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 0;
+}
+
+#countries li{
+    width: 40%;
+    border: 1px solid #fff;
+    border-radius: 0.375em;
+    text-align: center;
+    padding: .33em .75em;
+    margin: .5em 0;
+    list-style-type: none;
+    cursor: pointer;
+    transition: .3s ease-in-out;
+}
+
+#countries li:nth-of-type(2n + 1){
+    margin-right: 1em;
+}
+
+#countries li:hover {
+    background-color: #fff;
+    color: #050924e6;
 }

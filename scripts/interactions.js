@@ -1,5 +1,5 @@
 import { filterAllData } from './stateData.js'
-import { map } from './mapbox.js'
+import { map, generateInformationTips } from './mapbox.js'
 
 // get all selectors
 const randomCountry = findElement('#nextItem')
@@ -31,15 +31,12 @@ flyToLocation.addEventListener('click', () => {
 function initRandomCountrySelector(data) {
 	randomCountry.addEventListener('click', () => {
 		const randomCountry = data[Math.floor(Math.random() * data.length)]
-		map.flyTo({ center: [randomCountry.long, randomCountry.lat] })
+		map.flyTo({
+			center: [randomCountry.long, randomCountry.lat],
+			pitch: 40,
+			zoom: 6
+		})
 	})
-}
-
-function onchange() {
-	selectValue = d3.select('#mapDataFilter').property('value')
-	d3.select('body')
-		.append('p')
-		.text(selectValue + ' is the last selected option.')
 }
 
 function findElement(d) {

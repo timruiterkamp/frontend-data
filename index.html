@@ -32,23 +32,24 @@
         <section class="map-section">
             <div class="map-state-information">
                 <section class="country-display">
-                    <h2>Countries:</h2> 
+                    <h3>Filter:</h3>
                     <select id="mapDataFilter">
-                        <option value="totaleSchuld">Totale schuld</option>
+                        <option selected value="totaleSchuld">Totale schuld</option>
                         <option value="totalePopulatie">Totale populatie</option>
                     </select>
+                    <h3>Countries:</h3> 
+                    <button id='nextItem'>Go to a random country</button>
                     <div id="countries"></div>
                 </section>
                 <section class="country-info">
-                    <label>Choose year</label>
-                    <select id="chooseYear"></select>
-                    <div class="">
-                        <h3>Staatsschuld: <span id="stateDebt"></span></h3>
-                    </div>
+                    <!-- <label>Choose year</label>
+                    <div id="chooseYear"></select> -->
+                    <h3 id="countryName"></h3>
+                    <h4 id="stateDebt"></h4>
                 </section>
-                <button id='nextItem'>Go to a random country</button>
             </div>
         </section>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
         <script src="https://d3js.org/d3.v5.js"></script>
         <script type="module" src="scripts/stateData.js"></script>
         <script type="module" src="scripts/mapbox.js"></script>
