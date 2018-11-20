@@ -68,6 +68,7 @@ const filterAllData = Promise.all(files.map(url => d3.csv(url)))
 					.pop()
 			}))
 
+		state.data.total = filterByCountry
 		return filterByCountry
 	})
 	.catch(err => err)

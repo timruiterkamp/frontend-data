@@ -112,9 +112,6 @@ button:hover {
     color: white;
 }
 
-.country-info {
-    display: none;
-}
 
 #countries ul {
     display: flex;

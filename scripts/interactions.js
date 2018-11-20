@@ -13,7 +13,7 @@ filterAllData.then(data => {
 
 // Event listeners
 flyToLocation.addEventListener('click', () => {
-	mapIntro.style = 'display: none;'
+	state.data.init = false
 	styleBeforeElement('#map:before', {
 		display: 'none'
 	})
@@ -31,6 +31,10 @@ flyToLocation.addEventListener('click', () => {
 function initRandomCountrySelector(data) {
 	randomCountry.addEventListener('click', () => {
 		const randomCountry = data[Math.floor(Math.random() * data.length)]
+		state.data.country = randomCountry.country
+		state.data.debt = randomCountry.debt
+		state.data.population = randomCountry.population[0].value
+
 		map.flyTo({
 			center: [randomCountry.long, randomCountry.lat],
 			pitch: 40,

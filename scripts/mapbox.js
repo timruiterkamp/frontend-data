@@ -14,6 +14,8 @@ const map = new mapboxgl.Map({
 	// maxBounds: bounds
 })
 
+state.data.map = map
+
 const container = map.getCanvasContainer()
 const currentZoomLevel = map.getZoom()
 const svg = d3
@@ -24,8 +26,8 @@ const svg = d3
 map.on('load', () => {
 	filterAllData
 		.then(res => {
-			initSelectOption(res)
 			// initDebtByYearSelection(res.map(d => d))
+			initSelectOption(res)
 			generateListWithCountries('#countries', res.map(d => d))
 			generateInformationTips(res.map(d => d))
 		})
@@ -43,15 +45,9 @@ function generateListWithCountries(selection, d) {
 		.on('click', e =>
 			d
 				.filter(country => country.country == e)
-				.map(d =>
-					map.flyTo({
-						center: [d.long, d.lat],
-						zoom: currentZoomLevel * 2,
-						pitch: 40,
-						curve: 2,
-						speed: 0.5
-					})
-				)
+				.map(d => {
+					toggleCountryInfo(d)
+				})
 		)
 }
 
@@ -123,70 +119,46 @@ function toggleCountryInfo(d) {
 	map.flyTo({
 		center: [d.long, d.lat],
 		zoom: currentZoomLevel * 2,
-		pitch: 40,
+		pitch: 30,
 		curve: 2,
 		speed: 0.5
 	})
 
+	console.log(map.getCenter().lat)
+	setCountryInformationWidth('increase')
 	showCountryInformation(d)
 }
 
 function showCountryInformation(data) {
-	document.querySelector('.country-display').style = 'display: none;'
-	document.querySelector('.country-info').style = 'display: block;'
-
-	const infoSection = d3
-		.select('.country-info')
-		.append('section')
-		.attr('class', 'country-information')
-
-	infoSection
-		.append('h3')
-		.attr('class', 'countryName')
-		.text(data.country)
-
-	const update = () => {
-		infoSection
-			.append('h3')
-			.attr('class', 'countryName')
-			.text(data.country)
-
-		console.log(data)
-		infoSection
-			.append('h4')
-			.attr('class', 'Population')
-			.text(`totaal aantal inwoners: ${data.population[0].value}`)
-
-		infoSection
-			.append('h4')
-			.attr('class', 'Population')
-			.text(`totale schuld: ${data.debt[0].debt} miljoen`)
-	}
-	// Call the update function
-	update()
+	state.data.showCountryInfo = !state.data.showCountryInfo
+	state.data.country = data.country
+	state.data.debt = data.debt
+	state.data.population = data.population[0].value
 }
 
-function initDebtByYearSelection(data) {
-	const yearSelection = d3
-		.select('#chooseYear')
-		.append('select')
-		.attr('class', 'select')
-		.on('change', () => {
-			const values = d3.select('.select').property('value')
-			d3.select('#stateDebt')
-				.data(data[0].debt)
-				.enter()
-				.append('p')
-				.text(d => (d.TIME == values ? d.debt : ''))
-			console.log(values)
-		})
+// function initDebtByYearSelection(data) {
+// 	const yearSelection = d3
+// 		.select('#testing')
+// 		.append('select')
+// 		.attr('class', 'select')
+// 		.on('change', () => {
+// 			const values = d3.select('.select').property('value')
+// 			console.log(values)
+// 			state.data.currentYearSelection = values
+// 		})
+// 	const options = yearSelection
+// 		.selectAll('option')
+// 		.data(data[0].debt)
+// 		.enter()
+// 		.append('option')
+// 		.text(d => d.TIME)
+// }
 
-	const options = yearSelection
-		.selectAll('option')
-		.data(data[0].debt)
-		.enter()
-		.append('option')
-		.text(d => d.TIME)
+function setCountryInformationWidth(statement) {
+	let infoWidth = document.querySelector('.map-section')
+	return statement == 'increase'
+		? (infoWidth.style = 'width: 45vw; transform: translateX(0)')
+		: (infoWidth.style = 'width: 30vw; transform: translateX(0)')
 }
 
 export { map, generateListWithCountries, generateInformationTips }
