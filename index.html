@@ -48,7 +48,7 @@
                     </div>
                 </header>
                 <div class="map-state-information">
-                    <section class="country-display" v-if='!data.showCountryInfo'>
+                    <section class="country-display" v-show='!data.showCountryInfo'>
                         <h3>Filter:</h3>
                         <select id="mapDataFilter">
                             <option selected value="totaleSchuld">Totale schuld</option>
@@ -58,7 +58,7 @@
                         <button id='nextItem'>Go to a random country</button>
                         <div id="countries"></div>
                     </section>
-                    <section class="country-info" v-else>
+                    <section class="country-info" v-if='data.showCountryInfo'>
                         <h3>{{data.country}}</h3>
                         <h4>Totaal aantal inwoners: {{data.population}}</h4>
                         <h4>Totale schuld: {{data.debt[0].debt.replace(',', '.')}} Miljoen</h4>
