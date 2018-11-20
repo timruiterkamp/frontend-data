@@ -10,7 +10,6 @@ body {
     position: absolute;
     width: 100vw;
     height: 100vh;
-    transition: .3s ease-in-out;
 }
 
 #map::before {
@@ -41,26 +40,30 @@ circle:hover {
     stroke-width: 10;
 }
 
-#mapDataFilter {
+#mapDataFilter, .countrySelection {
     width: 70%;
     height: 3em;
     background-color: transparent;
     color: #fff;
+    border: 1px solid #fff;
+}
+
+#flyToLocation {
+    margin: 3em auto;
 }
 
 button {
     display: block;
     position: relative;
-    margin: 0px auto;
-    width: 50%;
-    height: 40px;
-    padding: 10px;
+    margin: 1em 0;
+    width: 70%;
+    padding: .75em;
     border-radius: 3px;
     font-size: 12px;
     text-align: center;
     color: #fff;
     background-color: transparent;
-    border: 1px solid;
+    border: .5px solid;
     transition: .3s ease-in-out;
     cursor: pointer;
 }
@@ -157,7 +160,7 @@ header h2 {
     display: flex;
 }
 
-.useful-links p {
+.useful-links p, .gesture-information-icons p  {
     display: flex;
     flex-direction: column-reverse;
     align-items: center;
@@ -168,4 +171,18 @@ header h2 {
     width: 2em;
     height: 2em;
     fill: #fff;
+}
+
+.gesture-information-icons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.gesture-information-icons img {
+    height: 35px;
+}
+
+.mapboxgl-ctrl-bottom-left, .mapboxgl-ctrl-bottom-right {
+    display: none;
 }

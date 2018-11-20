@@ -5,7 +5,6 @@ const state = {
 		population: '',
 		total: [],
 		showCountryInfo: false,
-		currentYearSelection: 2016,
 		init: true,
 		map: null,
 		currGeoLocation: []
@@ -32,7 +31,7 @@ const app = new Vue({
 				? state.data.map.flyTo({
 						pitch: 0,
 						center: [10.214134, 47.440152],
-						zoom: 3
+						zoom: 4
 				  })
 				: ''
 		}

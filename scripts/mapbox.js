@@ -138,7 +138,7 @@ function toggleCountryInfo(d) {
 }
 
 function showCountryInformation(data) {
-	state.data.showCountryInfo = !state.data.showCountryInfo
+	state.data.showCountryInfo = true
 	state.data.country = data.country
 	state.data.debt = data.debt
 	state.data.population = data.population[0].value
