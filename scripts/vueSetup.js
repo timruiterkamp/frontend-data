@@ -7,7 +7,8 @@ const state = {
 		showCountryInfo: false,
 		init: true,
 		map: null,
-		currGeoLocation: []
+		currGeoLocation: [],
+		overviewIsClicked: false
 	}
 }
 
@@ -34,6 +35,9 @@ const app = new Vue({
 						zoom: 3
 				  })
 				: ''
+		},
+		setOverviewClickedStatus: () => {
+			state.data.overviewIsClicked = !state.data.overviewIsClicked
 		}
 	}
 })

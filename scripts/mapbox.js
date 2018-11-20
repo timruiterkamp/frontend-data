@@ -76,7 +76,7 @@ function generateInformationTips(d, selectOption) {
 			.attr('cx', d => project([+d.long, +d.lat]).x)
 			.attr('cy', d => project([+d.long, +d.lat]).y)
 			.transition()
-			.duration(500)
+			.duration(1500)
 			.attr('r', d => {
 				if (selectOption == 'totaleSchuld') {
 					return (

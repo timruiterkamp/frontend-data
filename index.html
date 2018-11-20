@@ -14,7 +14,13 @@
     </head>
     <body>
         <main id="app">
-            <div id="map"></div>
+            <section id="map"></section>
+            <section id="debt-overview" v-show='data.overviewIsClicked'>
+                <div class="close-element" @click="setOverviewClickedStatus()">
+                    <p>Close view</p>
+                    <img src="./assets/cross.svg" alt="Close view">
+                </div>
+            </section>
             <section class="map-intro" v-show="data.init">
                 <div class="map-intro-content">
                     <h2>How much would it cost to pay off your state debt?</h2>
@@ -43,13 +49,13 @@
                     <h2>Europe debt display</h2>
                     <div class="useful-links">
                         <p @click="setCenter()">Center map <img src="./assets/center.svg" alt="Center Europe"></p>
-                        <p v-if='!data.showCountryInfo'>Europe debt overview <img src="./assets/total-overview.svg" alt="Total Europe overview"></p>
+                        <p @click="setOverviewClickedStatus()" v-if='!data.showCountryInfo'>Europe debt overview <img src="./assets/total-overview.svg" alt="Total Europe overview"></p>
                         <p v-else @click="closeCountryInfo()">Close view<img src="./assets/cross.svg" alt="Close view"></span>
                     </div>
                 </header>
                 <div class="map-state-information">
                     <section class="country-display" v-show='!data.showCountryInfo'>
-                        <h3>Filter:</h3>
+                        <h3>Sorteer op:</h3>
                         <select id="mapDataFilter">
                             <option selected value="totaleSchuld">Totale schuld</option>
                             <option value="totalePopulatie">Totale populatie</option>

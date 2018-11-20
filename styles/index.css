@@ -48,6 +48,10 @@ circle:hover {
     border: 1px solid #fff;
 }
 
+#mapDataFilter {
+    margin-bottom: 3em;
+}
+
 #flyToLocation {
     margin: 3em auto;
 }
@@ -150,6 +154,8 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: #00031e;
+    padding-bottom: 2em;
 }
 
 header h2 {
@@ -185,4 +191,35 @@ header h2 {
 
 .mapboxgl-ctrl-bottom-left, .mapboxgl-ctrl-bottom-right {
     display: none;
+}
+
+#debt-overview {
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(5, 9, 36, 1);
+    z-index: 3;
+    position: absolute;
+    opacity: 0;
+    transform: translateX(-100vw);
+    animation: fadeIn .3s forwards;
+}
+
+.close-element {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: flex-end;
+    margin: 3em 4em;
+}
+
+.close-element img {
+    height: 35px;
+}
+
+.close-element p {
+    color: #fff;
+}
+
+@keyframes fadeIn {
+    from {transform: translateX(-100vw); opacity: 0}
+    to {transform: translateX(0); opacity: 1}
 }
