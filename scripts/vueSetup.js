@@ -8,7 +8,7 @@ const state = {
 		currentYearSelection: 2016,
 		init: true,
 		map: null,
-		setCountryInformationWidth: 'decrease'
+		currGeoLocation: []
 	}
 }
 
@@ -26,6 +26,15 @@ const app = new Vue({
 					zoom: 4
 				})
 			}
+		},
+		setCenter: () => {
+			state.data.map
+				? state.data.map.flyTo({
+						pitch: 0,
+						center: [10.214134, 47.440152],
+						zoom: 3
+				  })
+				: ''
 		}
 	}
 })

@@ -31,6 +31,14 @@
                 </div>
             </section>
             <section class="map-section">
+                <header>
+                    <h2>Europe debt display</h2>
+                    <div class="useful-links">
+                        <p @click="setCenter()">Center map <img src="./assets/center.svg" alt="Center Europe"></p>
+                        <p v-if='!data.showCountryInfo'>Europe debt overview <img src="./assets/total-overview.svg" alt="Total Europe overview"></p>
+                        <p v-else @click="closeCountryInfo()">Close view<img src="./assets/cross.svg" alt="Close view"></span>
+                    </div>
+                </header>
                 <div class="map-state-information">
                     <section class="country-display" v-if='!data.showCountryInfo'>
                         <h3>Filter:</h3>
@@ -43,7 +51,6 @@
                         <div id="countries"></div>
                     </section>
                     <section class="country-info" v-else>
-                        <span @click="closeCountryInfo()">X</span>
                         <h3>{{data.country}}</h3>
                         <h4>Totaal aantal inwoners: {{data.population}}</h4>
                         <h4>Totale schuld: {{data.debt[0].debt.replace(',', '.')}} Miljoen</h4>

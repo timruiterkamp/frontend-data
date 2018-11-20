@@ -35,20 +35,25 @@ map.on('load', () => {
 })
 
 function generateListWithCountries(selection, d) {
-	var ul = d3.select(selection).append('ul')
-
-	ul.selectAll('li')
-		.data(d.map(country => country.country))
-		.enter()
-		.append('li')
-		.html(String)
-		.on('click', e =>
-			d
-				.filter(country => country.country == e)
+	var select = d3
+		.select(selection)
+		.append('select')
+		.attr('class', 'countrySelection')
+		.on('change', e => {
+			const value = d3.select('.countrySelection').property('value')
+			return d
+				.filter(country => country.country == value)
 				.map(d => {
 					toggleCountryInfo(d)
 				})
-		)
+		})
+
+	select
+		.selectAll('option')
+		.data(d.map(country => country.country))
+		.enter()
+		.append('option')
+		.text(d => d)
 }
 
 // Thanks to jorditost for showing how to display dots on mapbox
@@ -116,17 +121,20 @@ function project(coords) {
 }
 
 function toggleCountryInfo(d) {
+	setCountryInformationWidth('increase')
+	showCountryInformation(d)
+
 	map.flyTo({
-		center: [d.long, d.lat],
+		center: [
+			state.data.currGeoLocation.long,
+			state.data.currGeoLocation.lat
+		],
 		zoom: currentZoomLevel * 2,
+		offset: [-300, 0],
 		pitch: 30,
 		curve: 2,
 		speed: 0.5
 	})
-
-	console.log(map.getCenter().lat)
-	setCountryInformationWidth('increase')
-	showCountryInformation(d)
 }
 
 function showCountryInformation(data) {
@@ -134,6 +142,7 @@ function showCountryInformation(data) {
 	state.data.country = data.country
 	state.data.debt = data.debt
 	state.data.population = data.population[0].value
+	state.data.currGeoLocation = { lat: data.lat, long: data.long }
 }
 
 // function initDebtByYearSelection(data) {

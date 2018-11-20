@@ -10,6 +10,7 @@ body {
     position: absolute;
     width: 100vw;
     height: 100vh;
+    transition: .3s ease-in-out;
 }
 
 #map::before {
@@ -139,4 +140,32 @@ button:hover {
 #countries li:hover {
     background-color: #fff;
     color: #050924e6;
+}
+
+header {
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header h2 {
+    font-size: 1.5em;
+}
+
+.useful-links {
+    display: flex;
+}
+
+.useful-links p {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    margin: .75em 1.25em;
+}
+
+.useful-links p img {
+    width: 2em;
+    height: 2em;
+    fill: #fff;
 }
