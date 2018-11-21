@@ -50,9 +50,9 @@
                 <header>
                     <h2>Europe debt display</h2>
                     <div class="useful-links">
-                        <p @click="setCenter()">Center map <img src="./assets/center.svg" alt="Center Europe"></p>
-                        <p @click="setOverviewClickedStatus()" v-if='!data.showCountryInfo'>Europe debt overview <img src="./assets/total-overview.svg" alt="Total Europe overview"></p>
-                        <p v-else @click="closeCountryInfo()">Close view<img src="./assets/cross.svg" alt="Close view"></span>
+                        <p @click="setCenter()" class="centerMap">Center map <img src="./assets/center.svg" alt="Center Europe"></p>
+                        <p @click="setOverviewClickedStatus()" class="showDebtOverview" v-if='!data.showCountryInfo'>Europe debt overview <img src="./assets/total-overview.svg" alt="Total Europe overview"></p>
+                        <p v-else @click="closeCountryInfo()" class="closeView">Close view<img src="./assets/cross.svg" alt="Close view"></span>
                     </div>
                 </header>
                 <div class="map-state-information">

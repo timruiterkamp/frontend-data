@@ -28,33 +28,11 @@ map.on('load', () => {
 		.then(res => {
 			// initDebtByYearSelection(res.map(d => d))
 			initSelectOption(res)
-			generateListWithCountries('#countries', res.map(d => d))
 			generateInformationTips(res.map(d => d))
+			generateListWithCountries('#countries', res.map(d => d))
 		})
 		.catch(err => console.error(err))
 })
-
-function generateListWithCountries(selection, d) {
-	var select = d3
-		.select(selection)
-		.append('select')
-		.attr('class', 'countrySelection')
-		.on('change', e => {
-			const value = d3.select('.countrySelection').property('value')
-			return d
-				.filter(country => country.country == value)
-				.map(d => {
-					toggleCountryInfo(d)
-				})
-		})
-
-	select
-		.selectAll('option')
-		.data(d.map(country => country.country))
-		.enter()
-		.append('option')
-		.text(d => d)
-}
 
 // Thanks to jorditost for showing how to display dots on mapbox
 function generateInformationTips(d, selectOption) {
@@ -64,6 +42,7 @@ function generateInformationTips(d, selectOption) {
 		.enter()
 		.append('circle')
 		.attr('r', 2)
+		// .attr('class', d => `${trimWhiteAndLowercase(d.country)}`)
 		.on('click', d => toggleCountryInfo(d))
 		.transition()
 		.duration(0)
@@ -106,6 +85,28 @@ function generateInformationTips(d, selectOption) {
 		.on('zoom', () => update())
 }
 
+function generateListWithCountries(selection, d) {
+	var select = d3
+		.select(selection)
+		.append('select')
+		.attr('class', 'countrySelection')
+		.on('change', e => {
+			const value = d3.select('.countrySelection').property('value')
+			return d
+				.filter(country => country.country == value)
+				.map(d => {
+					toggleCountryInfo(d)
+				})
+		})
+
+	select
+		.selectAll('option')
+		.data(d.map(country => country.country))
+		.enter()
+		.append('option')
+		.text(d => d)
+}
+
 function initSelectOption(data) {
 	mapDataFilter.addEventListener('change', e => {
 		generateInformationTips(data.map(d => d), e.target.value)
@@ -123,6 +124,7 @@ function project(coords) {
 function toggleCountryInfo(d) {
 	setCountryInformationWidth('increase')
 	showCountryInformation(d)
+	// attractActiveClass(d.country)
 
 	map.flyTo({
 		center: [
@@ -143,6 +145,17 @@ function showCountryInformation(data) {
 	state.data.debt = data.debt
 	state.data.population = data.population[0].value
 	state.data.currGeoLocation = { lat: data.lat, long: data.long }
+}
+
+function attractActiveClass(country) {
+	const stateCountry = trimWhiteAndLowercase(state.data.country)
+	const selectedCountry = trimWhiteAndLowercase(country)
+
+	console.log()
+
+	stateCountry == selectedCountry
+		? document.querySelector(`.${selectedCountry}`).classList.add('pulse')
+		: ''
 }
 
 // function initDebtByYearSelection(data) {
@@ -168,6 +181,10 @@ function setCountryInformationWidth(statement) {
 	return statement == 'increase'
 		? (infoWidth.style = 'width: 45vw; transform: translateX(0)')
 		: (infoWidth.style = 'width: 30vw; transform: translateX(0)')
+}
+
+function trimWhiteAndLowercase(str) {
+	return str.replace(' ', '').toLocaleLowerCase()
 }
 
 export { map, generateListWithCountries, generateInformationTips }
