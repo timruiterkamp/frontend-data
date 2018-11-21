@@ -4,7 +4,7 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-        <title>Document</title>
+        <title>European debt display</title>
         <link href="styles/index.css" rel="stylesheet" />
         <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v0.49.0/mapbox-gl.js"></script>
         <link
@@ -15,12 +15,14 @@
     <body>
         <main id="app">
             <section id="map"></section>
-            <section id="debt-overview" v-show='data.overviewIsClicked'>
-                <div class="close-element" @click="setOverviewClickedStatus()">
-                    <p>Close view</p>
-                    <img src="./assets/cross.svg" alt="Close view">
-                </div>
-            </section>
+            <transition name="fadeIn">
+                <section id="debt-overview" v-show='data.overviewIsClicked'>
+                    <div class="close-element" @click="setOverviewClickedStatus()">
+                        <p>Close view</p>
+                        <img src="./assets/cross.svg" alt="Close view">
+                    </div>
+                </section>
+            </transition>
             <section class="map-intro" v-show="data.init">
                 <div class="map-intro-content">
                     <h2>How much would it cost to pay off your state debt?</h2>
