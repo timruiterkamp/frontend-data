@@ -58,13 +58,19 @@ function generateInformationTips(d, selectOption) {
 			.duration(1500)
 			.attr('r', d => {
 				if (selectOption == 'totaleSchuld') {
+					console.log(d.debt[0].debt)
 					return (
-						+d.debt[0].debt.replace(',', '').split('.')[0] / 5000 +
+						Math.sqrt(
+							(+d.debt[0].debt.replace(',', '').split('.')[0] /
+								6000) *
+								100
+						) +
 						3 * map.getZoom()
 					)
 				} else if (selectOption == 'totalePopulatie') {
 					return d.population.length
-						? +d.population[0].value / 2000000 + 3
+						? Math.sqrt((+d.population[0].value / 6000000) * 100) +
+								3
 						: 0
 				} else {
 					return (
@@ -83,6 +89,15 @@ function generateInformationTips(d, selectOption) {
 		.on('move', () => update())
 		.on('moveend', () => update())
 		.on('zoom', () => update())
+}
+
+function getRadius(amount) {
+	const startZoom = 6
+	const minPointSize = 5
+	const radiusExp = (map.getZoom() - startZoom) * 0.75 + 1
+	return (amount * radiusExp) / 10 + minPointSize > minPointSize
+		? (amount * radiusExp) / 10 + minPointSize
+		: minPointSize
 }
 
 function generateListWithCountries(selection, d) {

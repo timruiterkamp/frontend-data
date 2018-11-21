@@ -28,8 +28,10 @@ const filterAllData = Promise.all(files.map(url => d3.csv(url)))
 		const populationPerCountry = d3
 			.nest()
 			.key(d => d['Country Name'])
-			.rollup(v => v[0][2015])
+			.rollup(v => v[0][2016])
 			.entries(values[2])
+
+		console.log(populationPerCountry)
 
 		let filteredDataObject = [].concat(
 			...debtPerCountry,
