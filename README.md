@@ -61,33 +61,32 @@ Combined all not OBA related cases which resulted in the research case:
 # Overview research case
 
 ## What are famous dishes / products per country
+To answer this me and my girlfriend searched the web, mostly cookbooks en restaurant reviews to gain insight in famous dishes / products and their prices. It was quite difficult to find all the prices as some dishes are a combination of multiple food sorts.  In the end I got quite some products and it looked like this in JSON format:
 
-    To answer this me and my girlfriend searched the web, mostly cookbooks en restaurant reviews to gain insight in famous dishes / products and their prices. It was quite difficult to find all the prices as some dishes are a combination of multiple food sorts.  In the end I got quite some products and it looked like this in JSON format:
-    
-    ```JSON
-    [
-        {
-            "country": "Cyprus",
-            "products": [
-                {
-                    "food": "souvlakia"
-                    "price": 1.50
-                    "amount": 1
-                }
-                {
-                    "food": "halloumi"
-                    "price": 1.50
-                    "amount": 1
-                }
-                {
-                    "food": "Hummus"
-                    "price": 2
-                    "amount": 1
-                }
-            ]
-        }
-    ]
-    ```
+```JSON
+[
+    {
+        "country": "Cyprus",
+        "products": [
+            {
+                "food": "souvlakia"
+                "price": 1.50
+                "amount": 1
+            }
+            {
+                "food": "halloumi"
+                "price": 1.50
+                "amount": 1
+            }
+            {
+                "food": "Hummus"
+                "price": 2
+                "amount": 1
+            }
+        ]
+    }
+]
+```
 
 ## What is the total debt of countries  
 To research this is searched multiple government websites to get a somewhat complete dataset of countries and their debt.
