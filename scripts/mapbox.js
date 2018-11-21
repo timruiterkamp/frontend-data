@@ -26,6 +26,7 @@ map.on('load', () => {
 
 	filterAllData
 		.then(res => {
+			console.log(res)
 			// initDebtByYearSelection(res.map(d => d))
 			initSelectOption(res)
 			generateInformationTips(res.map(d => d))
@@ -41,7 +42,6 @@ function generateInformationTips(d, selectOption) {
 		.data(d)
 		.enter()
 		.append('circle')
-		.attr('r', 2)
 		// .attr('class', d => `${trimWhiteAndLowercase(d.country)}`)
 		.on('click', d => toggleCountryInfo(d))
 		.transition()
@@ -55,14 +55,12 @@ function generateInformationTips(d, selectOption) {
 			.attr('cx', d => project([+d.long, +d.lat]).x)
 			.attr('cy', d => project([+d.long, +d.lat]).y)
 			.transition()
-			.duration(1500)
+			.duration(750)
 			.attr('r', d => {
 				if (selectOption == 'totaleSchuld') {
-					console.log(d.debt[0].debt)
 					return (
 						Math.sqrt(
-							(+d.debt[0].debt.replace(',', '').split('.')[0] /
-								6000) *
+							(+d.debt[0].replace(',', '').split('.')[0] / 6000) *
 								100
 						) +
 						3 * map.getZoom()
@@ -74,7 +72,10 @@ function generateInformationTips(d, selectOption) {
 						: 0
 				} else {
 					return (
-						+d.debt[0].debt.replace(',', '').split('.')[0] / 5000 +
+						Math.sqrt(
+							(+d.debt[0].replace(',', '').split('.')[0] / 6000) *
+								100
+						) +
 						3 * map.getZoom()
 					)
 				}

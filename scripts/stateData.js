@@ -31,8 +31,6 @@ const filterAllData = Promise.all(files.map(url => d3.csv(url)))
 			.rollup(v => v[0][2016])
 			.entries(values[2])
 
-		console.log(populationPerCountry)
-
 		let filteredDataObject = [].concat(
 			...debtPerCountry,
 			...populationPerCountry,
@@ -50,7 +48,9 @@ const filterAllData = Promise.all(files.map(url => d3.csv(url)))
 			.filter(filterByData => filterByData.values.length > 2)
 			.map(items => ({
 				country: items.key,
-				debt: items.values.filter(d => d.UNIT == 'Million euro'),
+				debt: items.values
+					.filter(d => d.UNIT == 'Million euro')
+					.map(d => d.debt),
 				population: items.values.filter(d =>
 					d.value > 500 ? d.value : ''
 				),

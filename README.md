@@ -226,12 +226,28 @@ During this filtering the country name was used to compare and merge data. To wa
 ## How big is the dept per person
 To calculate the dept per person I used the total debt and divided it by the total population. For the current status of the project this is a great use case. But when I would take more time for this, I would've searched for the total toddlers / kids in a country and exclude them from the total population. Because this share of the population don't really have money and are supervised by their parents.  
 
-### Overview from all the results 🕵️‍♂️
-  
+### Outcome after all the filtering 🕵️‍♂️
+   So after all the filtering the clean data looked like this:
+   ```js
+    country: (...) // number
+    debt: (...) // debts 2015 / 2016
+    lat: (...) // lat location
+    long: (...) // long location
+    population: (...) // number
+   ```
+   ![visualized data](https://github.com/timruiterkamp/frontend-data/blob/master/gh-images/data-display.png)
+
 ## Sketch of the possible outcome ✏️
-  
+The first screen I designed was the overview of the countries.
+   ![visualizing the data](https://github.com/timruiterkamp/frontend-data/blob/master/gh-images/intro-screen.png)
+
+   The second screen I designed was the in depth situation of the country, where you zoom in on the country
+   ![visualizing the data](https://github.com/timruiterkamp/frontend-data/blob/master/gh-images/active-country1.png)
+
+   The third screen I designed was the overview of the debt per person by displaying what amount of items a person should buy/sell to pay off the debt.
+   ![visualizing the data](https://github.com/timruiterkamp/frontend-data/blob/master/gh-images/active-country2.png)
 ## Outcomes along the way 🚀
-  
+  - France has a very big dept of 2 trillion euro's. It's the biggest dept in whole of europe as of 2017.
 
 ## Endresult 📊
   
@@ -241,7 +257,10 @@ To calculate the dept per person I used the total debt and divided it by the tot
   
 
 ## Techniques used
-  
+  * Mapbox
+  * D3
+  * Javascript
+  * VueJS
 
 ## Code description
   
