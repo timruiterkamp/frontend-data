@@ -1,0 +1,447 @@
+
+[
+    { 
+        "country": "Italy",
+        "food": [
+            { "name": "pizza margarita",
+                "price": 8.00,
+                "amount": 1
+            },
+            { "name": "pasta bolognese",
+                "price": 6.00,
+                "amount": 1
+            },
+            { "name": "tiramizu",
+                "price": 4.00,
+                "amount": 1
+            }]
+    },
+    { 
+        "country": "Cyprus",
+        "food": [
+            { "name": "souvlakia",
+                "price": 1.50,
+                "amount": 1
+            },
+            { "name": "halloumi",
+                "price": 1.50,
+                "amount": 1
+            },
+            { "name": "Hummus",
+                "price": 2.00,
+                "amount": 1
+            }]
+    },
+    { 
+        "country": "Latvia",
+        "food": [
+            { "name": "beet soup",
+                "price": 3.00,
+                "amount": 1
+            },
+            { "name": "karbonade",
+                "price": 2.00,
+                "amount": 1
+            },
+            { "name": "Black Balsam",
+                "price": 4.50,
+                "amount": 1
+            }]
+    },
+    { 
+        "country": "Lithuania",
+        "food": [
+            { "name": "cepelinai",
+                "price": 2.00,
+                "amount": 1
+            },
+            { "name": "grybukai",
+                "price": 2.00,
+                "amount": 1
+            },
+            { "name": "fried rye bread",
+                "price": 1.00,
+                "amount": 1
+            }]
+    },
+    { 
+        "country": "Luxembourg",
+        "food": [
+            { "name": "bouneschlupp",
+                "price": 4.00,
+                "amount": 1
+            },
+            { "name": "friture",
+                "price": 3.40,
+                "amount": 4
+            },
+            { "name": "kuddelfleck",
+                "price": 3.00,
+                "amount": 1
+            }]
+    },
+    { 
+        "country": "Hungary",
+        "food": [
+            { "name": "goulash",
+                "price": 3.00,
+                "amount": 1
+            },
+            { "name": "halaszlé",
+                "price": 9.00,
+                "amount": 1
+            },
+            { "name": "pálinka",
+                "price": 7.00,
+                "amount": 1
+            }]
+    },
+    { 
+        "country": "Malta",
+        "food": [
+            { "name": "Ħobż tal-Malti",
+                "price": 1.50,
+                "amount": 1
+            },
+            { "name": "stuffat tal fenek ",
+                "price": 12.00,
+                "amount": 1
+            },
+            { "name": "Kinnie",
+                "price": 0.80,
+                "amount": 1
+            }]
+    },
+    { 
+        "country": "Netherlands",
+        "food": [
+            { "name": "bitterballen",
+                "price": 5.00,
+                "amount": 6
+            },
+            { "name": "stroopwafel",
+                "price": 2.00,
+                "amount": 10
+            },
+            { "name": "mosselen pan",
+                "price": 6.00,
+                "amount": 1
+            }]
+    },
+    { 
+        
+        "country": "Poland",
+        "food": [
+            { "name": "wodka",
+                "price": 12.00,
+                "amount": 1
+            },
+            { "name": "bigos",
+                "price": 3.00,
+                "amount": 1
+            },
+            { "name": "Kotlet schabowy",
+                "price": 5.00,
+                "amount": 1
+            }]
+    },
+    { 
+        "country": "Portugal",
+        "food": [
+            { "name": "feijoada",
+                "price": 14.00,
+                "amount": 1
+            },
+            { "name": "Cozido a Portuguesa",
+                "price": 10.00,
+                "amount": 1
+            },
+            { "name": "bacalhau",
+                "price": 15.00,
+                "amount": 1
+            }]
+    },
+    { 
+        "country": "Romania",
+        "food": [
+            { "name": "sarmale",
+                "price": 10.00,
+                "amount": 1
+            },
+            { "name": "mici",
+                "price": 5.00,
+                "amount": 1
+            },
+            { "name": "ciorba de burta",
+                "price": 8.00,
+                "amount": 1
+            }]
+    },
+    { 
+        "country": "Slovenia",
+        "food": [
+            { "name": "Aleluja",
+                "price": 2.50,
+                "amount": 1
+            },
+            { "name": "Polenta",
+                "price": 3.50,
+                "amount": 1
+            },
+            { "name": "Pršut",
+                "price": 8.00,
+                "amount": 1
+            }]
+    },
+    { 
+        "country": "Finland",
+        "food": [
+            { "name": "KARJALANPIIRAKKA ",
+                "price": 8.00,
+                "amount": 1
+            },
+            { "name": "Rapu",
+                "price": 34.00,
+                "amount": 1
+            },
+            { "name": "Lonkero",
+                "price": 6.00,
+                "amount": 1
+            }]
+    },
+    { 
+        "country": "Sweden",
+        "food": [
+            { "name": "Jansson’s temptation knäckebrød",
+                "price": 9.00,
+                "amount": 1
+            },
+            { "name": "Marinated Salmon with Dill Potatoes",
+                "price": 12.00,
+                "amount": 1
+            },
+            { "name": "Crayfish August",
+                "price": 20.00,
+                "amount": 1
+            }]
+    },
+    { 
+        "country": "United Kingdom",
+        "food": [
+            { "name": "fish en chips",
+                "price": 7.00,
+                "amount": 1
+            },
+            { "name": "Yorkshire Pudding",
+                "price": 5.00,
+                "amount": 1
+            },
+            { "name": "shepard’s pie",
+                "price": 6.50,
+                "amount": 1
+            }]
+    },
+    { 
+        "country": "Norway",
+        "food": [
+            { "name": "Kjøttkaker",
+                "price": 3.00,
+                "amount": 1
+            },
+            { "name": "Svinestek",
+                "price": 12.00,
+                "amount": 1
+            },
+            { "name": "Offal",
+                "price": 5.00,
+                "amount": 1
+            }]
+    },
+    { 
+        "country": "Polen",
+        "food": [
+            { "name": "pierogi",
+                "price": 7.00,
+                "amount": 1
+            },
+            { "name": "Rosol",
+                "price": 1.00,
+                "amount": 1
+            },
+            { "name": "golabki",
+                "price": 3.00,
+                "amount": 1
+            }]
+    },
+    { 
+        "country": "Belgie",
+        "food": [
+            { "name": "belgische frites",
+                "price": 2.50,
+                "amount": 1
+            },
+            { "name": "belgische chocolade",
+                "price": 7.00,
+                "amount": 1
+            },
+            { "name": "wafels",
+                "price": 3.50,
+                "amount": 1
+            }]
+    },
+    { 
+        "country": "Duitsland",
+        "food": [
+            { "name": "bratwurst",
+                "price": 1.30,
+                "amount": 1
+            },
+            { "name": "spätzle",
+                "price": 9.00,
+                "amount": 1
+            },
+            { "name": "sauerbraten",
+                "price": 8.00,
+                "amount": 1
+            }]
+    },
+    { 
+        "country": "Spanje",
+        "food": [
+            { "name": "paella",
+                "price": 13.00,
+                "amount": 1
+            },
+            { "name": "gazpacho",
+                "price": 5.00,
+                "amount": 1
+            },
+            { "name": "sangria",
+                "price": 12.00,
+                "amount": 1
+            }]
+    },
+    { 
+        "country": "Bulgaria",
+        "food": [
+            { "name": "Banitsa",
+                "price": 4.00,
+                "amount": 1
+            },
+            { "name": "kebabshe",
+                "price": 8.00,
+                "amount": 1
+            },
+            { "name": "lyutenitsa",
+                "price": 2.50,
+                "amount": 1
+            }]
+    },
+    { 
+        "country": "Czech republic",
+        "food": [
+            { "name": "trudlník",
+                "price": 6.50,
+                "amount": 1
+            },
+            { "name": "GULÁŠ",
+                "price": 11.00,
+                "amount": 1
+            },
+            { "name": "bier",
+                "price": 1.50,
+                "amount": 1
+            }]
+    },
+    { 
+        "country": "Denmark",
+        "food": [
+            { "name": "frikadeller",
+                "price": 3.00,
+                "amount": 1
+            },
+            { "name": "Akvavit",
+                "price": 16.00,
+                "amount": 1
+            },
+            { "name": "smørrebrød",
+                "price": 6.50,
+                "amount": 1
+            }]
+    },
+    { 
+        "country": "Estonia",
+        "food": [
+            { "name": "rogge brood",
+                "price": 1.60,
+                "amount": 1
+            },
+            { "name": "Kali",
+                "price": 1.00,
+                "amount": 1
+            },
+            { "name": "kvass",
+                "price": 2.00,
+                "amount": 1
+            }]
+    },
+    { 
+        "country": "Ireland",
+        "food": [
+            { "name": "Guinness",
+                "price": 4.50,
+                "amount": 1
+            },
+            { "name": "full irish breakfast",
+                "price": 10.00,
+                "amount": 1
+            },
+            { "name": "irish stew",
+                "price": 9.50,
+                "amount": 1
+            }]
+    },
+    { 
+        "country": "France",
+        "food": [
+            { "name": "baguettes",
+                "price": 1.00,
+                "amount": 1
+            },
+            { "name": "Moët & Chandon champagne",
+                "price": 44.50,
+                "amount": 1
+            },
+            { "name": "kaas",
+                "price": 8.75,
+                "amount": 1
+            }]
+    },
+    { 
+        "country": "Croatia",
+        "food": [
+            { "name": "Potato Gnocchi",
+                "price": 16.00,
+                "amount": 1
+            },
+            { "name": "Arancini",
+                "price": 4.00,
+                "amount": 1
+            },
+            { "name": "rozata",
+                "price": 1.50,
+                "amount": 1
+            }]
+    }
+]
+
+
+
+
+
+
+
+
+
+
+
