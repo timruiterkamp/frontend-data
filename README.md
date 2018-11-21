@@ -239,20 +239,20 @@ To calculate the dept per person I used the total debt and divided it by the tot
    ```
    ![visualized data](https://github.com/timruiterkamp/frontend-data/blob/master/gh-images/data-display.png)
 
-## Sketch of the possible outcome ✏️
+## Sketching journey ✏️
 
 So a big step back to the beginning of the project. I was thinking of doing something other than comparing book genres and searched for something with money, countries and a worldmap. Some ideas I sketched out were:
 
 ![Sketching the data](https://github.com/timruiterkamp/frontend-data/blob/master/gh-images/sketches.jpg)
 The first screen I designed was the overview of the countries.
 
-![visualizing the data](https://github.com/timruiterkamp/frontend-data/blob/master/gh-images/intro-screen.png)
+![visualizing the data](https://github.com/timruiterkamp/frontend-data/blob/master/gh-images/intro-screen.jpg)
 
 The second screen I designed was the in depth situation of the country, where you zoom in on the country
-![showing data per country](https://github.com/timruiterkamp/frontend-data/blob/master/gh-images/active-country1.png)
+![showing data per country](https://github.com/timruiterkamp/frontend-data/blob/master/gh-images/active-country1.jpg)
 
 The third screen I designed was the overview of the debt per person by displaying what amount of items a person should buy/sell to pay off the debt.
-![Showing ](https://github.com/timruiterkamp/frontend-data/blob/master/gh-images/active-country2.png)
+![Showing ](https://github.com/timruiterkamp/frontend-data/blob/master/gh-images/active-country2.jpg)
 
 ## Outcomes along the way 🚀
   - France has a very big dept of 2 trillion euro's. It's the biggest dept in whole of europe as of 2017.
