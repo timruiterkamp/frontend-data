@@ -11,10 +11,7 @@ const map = new mapboxgl.Map({
 	minZoom: 3,
 	zoom: 3,
 	doubleClickZoom: false
-	// maxBounds: bounds
 })
-
-state.data.map = map
 
 const container = map.getCanvasContainer()
 const currentZoomLevel = map.getZoom()
@@ -24,6 +21,9 @@ const svg = d3
 	.append('g')
 
 map.on('load', () => {
+	state.data.map = map
+	state.data.loaded = true
+
 	filterAllData
 		.then(res => {
 			// initDebtByYearSelection(res.map(d => d))

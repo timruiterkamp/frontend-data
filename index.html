@@ -23,7 +23,7 @@
                     </div>
                 </section>
             </transition>
-            <section class="map-intro" v-show="data.init">
+            <section class="map-intro" v-show="data.init" v-if="data.loaded">
                 <div class="map-intro-content">
                     <h2>How much would it cost to pay off your state debt?</h2>
                     <p>

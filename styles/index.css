@@ -19,7 +19,7 @@ body {
     content: '';
     top: 0;
     left: 0;
-    background-color: rgba(255,255,255,.4);
+    background-color: rgba(5, 8, 37, 0.45);
     z-index: 1;
 }
 svg {
@@ -88,14 +88,25 @@ button:hover {
     top: 50%;
     transform: translate(-50%, -50%);
     color: white;
+    opacity: 0;
+    will-change: opacity;
+    animation: fadeIn .7s forwards;
+    animation-delay: 1s;
 }
 
 .map-intro-content {
     padding: 4em;
     text-align: center;
+    animation: popUp 1s forwards;
+    animation-delay: 2s;
+    opacity: 0;
+    transform: translateY(2em);
 }
 .map-intro-content button {
     margin-top: 3em;
+    animation: fadeIn 2s forwards;
+    animation-delay: 4s;
+    opacity: 0;
 }
 
 .map-section {
@@ -179,6 +190,13 @@ header h2 {
     fill: #fff;
 }
 
+.gesture-information {
+    animation: popUp 1s forwards;
+    animation-delay: 3s;
+    opacity: 0;
+    transform: translateY(2em);
+}
+
 .gesture-information-icons {
     display: flex;
     flex-direction: row;
@@ -201,6 +219,8 @@ header h2 {
     position: absolute;
 }
 
+
+
 .close-element {
     display: flex;
     flex-direction: column-reverse;
@@ -210,7 +230,15 @@ header h2 {
 
 .close-element img {
     height: 35px;
+    cursor: pointer;
+    transition: .3s ease-in-out;
 }
+
+.close-element img:hover {
+    transform: rotate(90deg) scale(1.2);
+
+}
+
 
 .close-element p {
     color: #fff;
@@ -222,11 +250,17 @@ header h2 {
 .fadeIn-leave-active {
 transition: all .3s cubic-bezier(1.0, 0.5, 0.8, 1.0);
 }
-.fadeIn-enter{
+.fadeIn-enter, .fadeIn-leave{
 transform: translateX(-100vw);
 opacity: 0;
 }
 
-.fadeIn-leave-to {
-    opacity: 0;
+@keyframes popUp {
+    0%   { opacity: 0; transform: translateY(2em) }
+    100% { opacity: 1; transform: translateY(0)}
+}
+
+@keyframes fadeIn {
+    0%   { opacity: 0;}
+    100% { opacity: 1;}
 }

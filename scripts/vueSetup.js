@@ -8,7 +8,8 @@ const state = {
 		init: true,
 		map: null,
 		currGeoLocation: [],
-		overviewIsClicked: false
+		overviewIsClicked: false,
+		loaded: true
 	}
 }
 
