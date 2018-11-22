@@ -1,5 +1,5 @@
 import { filterAllData } from './stateData.js'
-import { map } from './mapbox.js'
+import { map, generateChartWithCountryInfo } from './index.js'
 
 // get all selectors
 const randomCountry = findElement('#nextItem')
@@ -40,10 +40,16 @@ function initRandomCountrySelector(data) {
 		}
 		state.data.selectedCountryProducts = randomCountry.food
 
+		generateChartWithCountryInfo(randomCountry)
+
+		document.querySelector('.map-section').style =
+			'width: 45vw; transform: translateX(0)'
+
 		map.flyTo({
 			center: [randomCountry.long, randomCountry.lat],
 			pitch: 40,
-			zoom: 6
+			zoom: 6,
+			offset: [-300, 0]
 		})
 	})
 }

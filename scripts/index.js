@@ -177,6 +177,7 @@ function generateChartWithCountryInfo(data) {
 }
 
 function drawBarChart(data) {
+	console.log(data)
 	//chart based on https://bl.ocks.org/mbostock/3887051. Thanks Mike Bostock
 	const margin = { top: 60, right: 20, bottom: 30, left: 40 }
 	const width = 450 - margin.left - margin.right
@@ -291,16 +292,6 @@ function drawBarChart(data) {
 
 	state.data.barchartIsDrawn = true
 	function update(data) {
-		// if (filtered.indexOf(d) == -1) {
-		// 	filtered.push(d)
-		// 	// if all bars are un-checked, reset:
-		// 	if (filtered.length == keys.length) filtered = []
-		// }
-		// // otherwise remove it:
-		// else {
-		// 	filtered.splice(filtered.indexOf(d), 1)
-		// }
-
 		const structuredData = d3
 			.nest()
 			.key(d => d.key)
@@ -345,60 +336,6 @@ function drawBarChart(data) {
 			.attr('height', function(d) {
 				return height - y(d.debt)
 			})
-
-		bars.exit().remove()
-
-		// //
-		// // Filter out the bands that need to be hidden:
-		// // //
-		// var bars = svg
-		// 	.selectAll('g')
-		// 	.classes('layer', true)
-		// 	.data(structuredData)
-		// 	.enter()
-		// 	.append('g')
-		// 	.selectAll('rect')
-		// 	.data(data.map(d => d))
-
-		// bars.filter(function(d) {
-		// 	return filtered.indexOf(d.name) > -1
-		// })
-		// 	.transition()
-		// 	.attr('x', function(d) {
-		// 		return (
-		// 			+d3.select(this).attr('x') +
-		// 			+d3.select(this).attr('width') / 2
-		// 		)
-		// 	})
-		// 	.attr('height', 0)
-		// 	.attr('width', 0)
-		// 	.attr('y', function(d) {
-		// 		return height
-		// 	})
-		// 	.duration(500)
-
-		// //
-		// // Adjust the remaining bars:
-		// //
-		// bars.filter(function(d) {
-		// 	return filtered.indexOf(d.key) == -1
-		// })
-		// 	.transition()
-		// 	.attr('x', function(d) {
-		// 		return x1(d.name)
-		// 	})
-		// 	.attr('y', function(d) {
-		// 		return y(d.debt)
-		// 	})
-		// 	.attr('height', function(d) {
-		// 		return height - y(d.debt)
-		// 	})
-		// 	.attr('width', x1.bandwidth())
-		// 	.attr('fill', function(d) {
-		// 		return z(d.name)
-		// 	})
-		// 	.duration(500)
-		// bars.exit().remove()
 	}
 
 	update(data)
@@ -418,17 +355,6 @@ function project(coords) {
 	return map.project(new mapboxgl.LngLat(+coords[0], +coords[1]))
 }
 
-// function attractActiveClass(country) {
-// 	const stateCountry = trimWhiteAndLowercase(state.data.country)
-// 	const selectedCountry = trimWhiteAndLowercase(country)
-
-// 	console.log()
-
-// 	stateCountry == selectedCountry
-// 		? document.querySelector(`.${selectedCountry}`).classList.add('pulse')
-// 		: ''
-// }
-
 function setCountryInformationWidth(statement) {
 	let infoWidth = document.querySelector('.map-section')
 	return statement == 'increase'
@@ -436,8 +362,9 @@ function setCountryInformationWidth(statement) {
 		: (infoWidth.style = 'width: 30vw; transform: translateX(0)')
 }
 
-// function trimWhiteAndLowercase(str) {
-// 	return str.replace(' ', '').toLocaleLowerCase()
-// }
-
-export { map, generateListWithCountries, generateInformationTips }
+export {
+	map,
+	generateListWithCountries,
+	generateInformationTips,
+	generateChartWithCountryInfo
+}
