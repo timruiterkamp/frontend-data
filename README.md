@@ -249,6 +249,7 @@ The third screen I designed was the overview of the debt per person by displayin
    ```js
     country: (...) // number
     debt: (...) // debts 2015 / 2016
+    food: (...) // array with food per country
     lat: (...) // lat location
     long: (...) // long location
     population: (...) // number

@@ -10,7 +10,8 @@ const state = {
 		currGeoLocation: [],
 		overviewIsClicked: false,
 		loaded: true,
-		countryItems: []
+		countryItems: [],
+		debtPerCitizen: 0
 	}
 }
 

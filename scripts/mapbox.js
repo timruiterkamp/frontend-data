@@ -56,26 +56,13 @@ function generateInformationTips(d, selectOption) {
 			.duration(750)
 			.attr('r', d => {
 				if (selectOption == 'totaleSchuld') {
-					return (
-						Math.sqrt(
-							(+d.debt[0].replace(',', '').split('.')[0] /
-								60000) *
-								100
-						) + 3
-					)
+					return Math.sqrt((+d.debt[0] / 10e9) * 100) + 3
 				} else if (selectOption == 'totalePopulatie') {
 					return d.population.length
-						? Math.sqrt((+d.population[0].value / 6000000) * 100) +
-								3
+						? Math.sqrt((+d.population[0].value / 10e6) * 100) + 3
 						: 0
 				} else {
-					return (
-						Math.sqrt(
-							(+d.debt[0].replace(',', '').split('.')[0] /
-								60000) *
-								100
-						) + 3
-					)
+					return Math.sqrt((+d.debt[0] / 10e10) * 100) + 3
 				}
 			})
 	}
@@ -112,24 +99,10 @@ function generateListWithCountries(selection, d) {
 		.text(d => d)
 }
 
-function initSelectOption(data) {
-	mapDataFilter.addEventListener('change', e => {
-		generateInformationTips(data.map(d => d), e.target.value)
-	})
-}
-
-function checkIfExists(data, fallback) {
-	data > 1 || (data.length && data !== undefined) ? data : fallback
-}
-
-function project(coords) {
-	return map.project(new mapboxgl.LngLat(+coords[0], +coords[1]))
-}
-
 function toggleCountryInfo(d) {
+	calculateDebtPerPerson(d)
 	setCountryInformationWidth('increase')
 	showCountryInformation(d)
-	// attractActiveClass(d.country)
 
 	map.flyTo({
 		center: [
@@ -150,6 +123,27 @@ function showCountryInformation(data) {
 	state.data.debt = data.debt
 	state.data.population = data.population[0].value
 	state.data.currGeoLocation = { lat: data.lat, long: data.long }
+}
+
+function calculateDebtPerPerson(data) {
+	const debtInEuros = data.debt[0] * 1000000
+	const population = data.population ? data.population[0].value : ''
+	const debt = (debtInEuros / population).toFixed(2)
+	state.data.debtPerCitizen = debt
+}
+
+function initSelectOption(data) {
+	mapDataFilter.addEventListener('change', e => {
+		generateInformationTips(data.map(d => d), e.target.value)
+	})
+}
+
+function checkIfExists(data, fallback) {
+	data > 1 || (data.length && data !== undefined) ? data : fallback
+}
+
+function project(coords) {
+	return map.project(new mapboxgl.LngLat(+coords[0], +coords[1]))
 }
 
 // function attractActiveClass(country) {

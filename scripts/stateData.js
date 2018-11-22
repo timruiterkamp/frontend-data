@@ -58,7 +58,9 @@ const filterAllData = Promise.all(csvFiles.map(url => d3.csv(url)))
 				country: items.key,
 				debt: items.values
 					.filter(d => d.UNIT == 'Million euro')
-					.map(d => d.debt.replace(',', '').replace('.', '')),
+					.map(
+						d => d.debt.replace(',', '').replace('.', '') * 1000000
+					),
 				population: items.values.filter(d =>
 					d.value > 500 ? d.value : ''
 				),
