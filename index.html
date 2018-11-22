@@ -38,6 +38,7 @@
                     </p>
                     <div class="gesture-information">
                         <h3>How to use!</h3>
+                        <h5>( if you have a touchpad )</h5>
                         <div class="gesture-information-icons">
                             <p>Drag to navigate<img src="./assets/swipe.svg" alt="Drag gesture"></p>
                             <p>Pinch to zoom<img src="./assets/pinch.svg" alt="Pinch gesture"></p>
@@ -78,10 +79,10 @@
                             <li v-for="item in data.selectedCountryProducts">{{item.name}}</li>
                         </ul>
                     </section>
-                    <section class="chartData">
+                    <section class="chartData" v-show='data.showCountryInfo'>
                         <p>Hover the bars for more information!</p>
-                        <svg class="countryDebtChart" v-show='data.showCountryInfo'></svg>
-                        <div id="tooltip" class="hidden" v-show='data.showCountryInfo'>
+                        <svg class="countryDebtChart"></svg>
+                        <div id="tooltip" class="hidden">
                             <p><span id="value"></span></p>
                         </div>
                     </section>

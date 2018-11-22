@@ -13,7 +13,8 @@ const state = {
 		countryItems: [],
 		currentDebtPerCitizen: 0,
 		pastDebtPerCitizen: 0,
-		selectedCountryProducts: []
+		selectedCountryProducts: [],
+		barchartIsDrawn: false
 	}
 }
 
@@ -40,7 +41,7 @@ const app = new Vue({
 				? state.data.map.flyTo({
 						pitch: 0,
 						center: [10.214134, 47.440152],
-						zoom: 3
+						zoom: 4
 				  })
 				: ''
 		},

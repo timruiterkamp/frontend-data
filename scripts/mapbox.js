@@ -184,9 +184,17 @@ function drawBarChart(data) {
 
 	const svg = d3.select('.countryDebtChart')
 
-	const g = svg
-		.append('g')
-		.attr('transform', 'translate(' + margin.left + ',' + margin.top + ')')
+	if (!state.data.barchartIsDrawn) {
+		const g = svg
+			.append('g')
+			.attr('class', 'layer')
+			.attr(
+				'transform',
+				'translate(' + margin.left + ',' + margin.top + ')'
+			)
+	}
+
+	const g = svg.select('.layer')
 
 	const x0 = d3
 		.scaleBand()
@@ -209,6 +217,7 @@ function drawBarChart(data) {
 		.data(structuredData)
 		.enter()
 		.append('g')
+		.attr('class', 'bar')
 		.attr('transform', d => 'translate(' + x0(d.key) + ',0)')
 		.selectAll('rect')
 		.data(d => d.values.map(items => ({ key: items.key, ...items })))
@@ -234,8 +243,32 @@ function drawBarChart(data) {
 		})
 		.on('mouseout', () => d3.select('#tooltip').classed('hidden', true))
 
-	g.append('g')
-		.attr('class', 'axis')
+	if (!state.data.barchartIsDrawn) {
+		g.append('g')
+			.attr('class', 'xAxis')
+			.attr('transform', 'translate(0,' + height + ')')
+			.call(d3.axisBottom(x0))
+			.append('text')
+			.attr('fill', '#fff')
+			.attr('font-weight', 'bold')
+			.attr('text-anchor', 'start')
+			.attr('transform', `translate(${width},0)`)
+			.text('Years')
+
+		g.append('g')
+			.attr('class', 'yAxis')
+			.call(d3.axisLeft(y).ticks(null, 's'))
+			.append('text')
+			.attr('x', 2)
+			.attr('y', y(y.ticks().pop()) + 0.5)
+			.attr('dy', '0.32em')
+			.attr('fill', '#fff')
+			.attr('font-weight', 'bold')
+			.attr('text-anchor', 'start')
+			.text('Amount')
+	}
+
+	g.select('.xAxis')
 		.attr('transform', 'translate(0,' + height + ')')
 		.call(d3.axisBottom(x0))
 		.append('text')
@@ -243,10 +276,9 @@ function drawBarChart(data) {
 		.attr('font-weight', 'bold')
 		.attr('text-anchor', 'start')
 		.attr('transform', `translate(${width},0)`)
-		.text('Jaren')
+		.text('Years')
 
-	g.append('g')
-		.attr('class', 'axis')
+	g.select('.yAxis')
 		.call(d3.axisLeft(y).ticks(null, 's'))
 		.append('text')
 		.attr('x', 2)
@@ -255,7 +287,121 @@ function drawBarChart(data) {
 		.attr('fill', '#fff')
 		.attr('font-weight', 'bold')
 		.attr('text-anchor', 'start')
-		.text('Aantallen')
+		.text('Amount')
+
+	state.data.barchartIsDrawn = true
+	function update(data) {
+		// if (filtered.indexOf(d) == -1) {
+		// 	filtered.push(d)
+		// 	// if all bars are un-checked, reset:
+		// 	if (filtered.length == keys.length) filtered = []
+		// }
+		// // otherwise remove it:
+		// else {
+		// 	filtered.splice(filtered.indexOf(d), 1)
+		// }
+
+		const structuredData = d3
+			.nest()
+			.key(d => d.key)
+			.entries(data)
+
+		x1.domain(data.map(d => d.name)).rangeRound([0, x0.bandwidth()])
+		y.domain([0, d3.max(data, d => d.debt)]).nice()
+
+		// update the y axis:
+		svg.select('.yAxis')
+			.transition()
+			.call(d3.axisLeft(y).ticks(null, 's'))
+			.duration(500)
+
+		var barGroups = g.selectAll('g.bar').data(structuredData)
+		barGroups
+			.enter()
+			.append('g')
+			.classed('bar', true)
+			.attr('transform', d => 'translate(' + x0(d.key) + ',0)')
+
+		barGroups.exit().remove()
+
+		var bars = g
+			.selectAll('g.bar')
+			.selectAll('rect')
+			.data(d => d.values.map(items => ({ key: items.key, ...items })))
+
+		bars.enter()
+			.append('rect')
+			.attr('x', d => x1(d.name))
+			.attr('y', d => y(d.debt))
+			.attr('width', x1.bandwidth())
+			.attr('height', d => height - y(d.debt))
+			.attr('fill', d => z(d.name))
+
+		bars.transition()
+			.duration(750)
+			.attr('y', function(d) {
+				return y(d.debt)
+			})
+			.attr('height', function(d) {
+				return height - y(d.debt)
+			})
+
+		bars.exit().remove()
+
+		// //
+		// // Filter out the bands that need to be hidden:
+		// // //
+		// var bars = svg
+		// 	.selectAll('g')
+		// 	.classes('layer', true)
+		// 	.data(structuredData)
+		// 	.enter()
+		// 	.append('g')
+		// 	.selectAll('rect')
+		// 	.data(data.map(d => d))
+
+		// bars.filter(function(d) {
+		// 	return filtered.indexOf(d.name) > -1
+		// })
+		// 	.transition()
+		// 	.attr('x', function(d) {
+		// 		return (
+		// 			+d3.select(this).attr('x') +
+		// 			+d3.select(this).attr('width') / 2
+		// 		)
+		// 	})
+		// 	.attr('height', 0)
+		// 	.attr('width', 0)
+		// 	.attr('y', function(d) {
+		// 		return height
+		// 	})
+		// 	.duration(500)
+
+		// //
+		// // Adjust the remaining bars:
+		// //
+		// bars.filter(function(d) {
+		// 	return filtered.indexOf(d.key) == -1
+		// })
+		// 	.transition()
+		// 	.attr('x', function(d) {
+		// 		return x1(d.name)
+		// 	})
+		// 	.attr('y', function(d) {
+		// 		return y(d.debt)
+		// 	})
+		// 	.attr('height', function(d) {
+		// 		return height - y(d.debt)
+		// 	})
+		// 	.attr('width', x1.bandwidth())
+		// 	.attr('fill', function(d) {
+		// 		return z(d.name)
+		// 	})
+		// 	.duration(500)
+		// bars.exit().remove()
+	}
+
+	update(data)
 }
 
 function initSelectOption(data) {
