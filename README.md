@@ -65,28 +65,27 @@ To answer this me and my girlfriend searched the web, mostly cookbooks en restau
 
 ```JSON
 [
-    {
-        "country": "Cyprus",
-        "products": [
-            {
-                "food": "souvlakia"
-                "price": 1.50
+    { 
+        "key": "Slovakia",
+        "food": [
+            { "name": "Halušky",
+                "price": 7.00,
                 "amount": 1
-            }
-            {
-                "food": "halloumi"
-                "price": 1.50
+            },
+            { "name": "Lokše",
+                "price": 2.00,
                 "amount": 1
-            }
-            {
-                "food": "Hummus"
-                "price": 2
-                "amount": 1
-            }
-        ]
+            },
+            { "name": "Bryndzové pirohy",
+                "price": 3.00,
+                "amount": 5
+            }]
     }
 ]
 ```
+
+Unfortunately I did not find the right price by every item so I guessed what a combination of products would cost in a little restaurant. The most expensive products are mostly liquor, with champagn being the most expensive. The complete meals vary from €7 to €22.
+
 
 ## What is the total debt of countries  
 To research this is searched multiple government websites to get a somewhat complete dataset of countries and their debt.
@@ -228,18 +227,8 @@ During this filtering the country name was used to compare and merge data. To wa
 ## How big is the dept per person
 To calculate the dept per person I used the total debt and divided it by the total population. For the current status of the project this is a great use case. But when I would take more time for this, I would've searched for the total toddlers / kids in a country and exclude them from the total population. Because this share of the population don't really have money and are supervised by their parents.  
 
-### Outcome after all the filtering 🕵️‍♂️
-   So after all the filtering the clean data looked like this:
-   ```js
-    country: (...) // number
-    debt: (...) // debts 2015 / 2016
-    lat: (...) // lat location
-    long: (...) // long location
-    population: (...) // number
-   ```
-   ![visualized data](https://github.com/timruiterkamp/frontend-data/blob/master/gh-images/data-display.png)
 
-## Sketching journey ✏️
+# Sketching journey ✏️
 
 So a big step back to the beginning of the project. I was thinking of doing something other than comparing book genres and searched for something with money, countries and a worldmap. Some ideas I sketched out were:
 
@@ -253,6 +242,19 @@ The second screen I designed was the in depth situation of the country, where yo
 
 The third screen I designed was the overview of the debt per person by displaying what amount of items a person should buy/sell to pay off the debt.
 ![Showing ](https://github.com/timruiterkamp/frontend-data/blob/master/gh-images/active-country2.jpg)
+
+
+# Outcome after all the filtering 🕵️‍♂️
+   So after all the filtering the clean data looked like this:
+   ```js
+    country: (...) // number
+    debt: (...) // debts 2015 / 2016
+    lat: (...) // lat location
+    long: (...) // long location
+    population: (...) // number
+   ```
+   And when displayed on a world map, the lat and long positions would result in:
+   ![visualized data](https://github.com/timruiterkamp/frontend-data/blob/master/gh-images/data-display.png)
 
 ## Outcomes along the way 🚀
   - France has a very big dept of 2 trillion euro's. It's the biggest dept in whole of europe as of 2017.
