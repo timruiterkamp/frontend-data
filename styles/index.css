@@ -121,6 +121,14 @@ button:hover {
 	opacity: 0;
 }
 
+#tooltip {
+	position: absolute;
+    background-color: #020c40;
+    border-radius: 5px;
+    padding: 15px;
+    width: 190px;
+}
+
 .map-section {
 	height: 100vh;
 	width: 30vw;
@@ -131,6 +139,7 @@ button:hover {
 	will-change: transform;
 	transition: 1.25s ease-in-out;
 	z-index: 2;
+	overflow: scroll;
 }
 
 .map-display {
@@ -261,7 +270,9 @@ header h2 {
 .close-element p {
 	color: #fff;
 }
-
+.hidden {
+	display: none;
+}
 /* animations */
 /* .pulse {
 	animation-duration: 2s;
@@ -274,9 +285,6 @@ header h2 {
     to {transform: scale(1.3)}
 } */
 
-.countryDebtChart {
-	background-color: #C7D9D9;
-}
 
 .fadeIn-enter-active {
 	transition: all 0.3s ease;

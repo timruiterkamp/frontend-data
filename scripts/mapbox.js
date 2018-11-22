@@ -135,6 +135,7 @@ function showCountryInformation(data) {
 	state.data.debt = data.debt
 	state.data.population = data.population[0].value
 	state.data.currGeoLocation = { lat: data.lat, long: data.long }
+	state.data.selectedCountryProducts = data.food
 }
 
 function calculateDebtPerPerson(data) {
@@ -176,29 +177,23 @@ function generateChartWithCountryInfo(data) {
 }
 
 function drawBarChart(data) {
-	console.log(data)
-	const svg = d3.select('.countryDebtChart'),
-		margin = { top: 20, right: 20, bottom: 30, left: 40 },
-		width = 300 - margin.left - margin.right,
-		height = 600 - margin.top - margin.bottom,
-		g = svg
-			.append('g')
-			.attr('width', width)
-			.attr('height', height)
-			.attr(
-				'transform',
-				'translate(' + margin.left + ',' + margin.top + ')'
-			)
+	//chart based on https://bl.ocks.org/mbostock/3887051. Thanks Mike Bostock
+	const margin = { top: 60, right: 20, bottom: 30, left: 40 }
+	const width = 300 - margin.left - margin.right
+	const height = 600 - margin.top - margin.bottom
+
+	const svg = d3.select('.countryDebtChart')
+
+	const g = svg
+		.append('g')
+		.attr('transform', 'translate(' + margin.left + ',' + margin.top + ')')
 
 	const x0 = d3
 		.scaleBand()
-		.rangeRound([0, 360])
+		.rangeRound([0, width])
 		.paddingInner(0.1)
-
 	const x1 = d3.scaleBand().padding(0.05)
-
 	const y = d3.scaleLinear().rangeRound([height, 0])
-
 	const z = d3
 		.scaleOrdinal()
 		.range([
@@ -210,33 +205,55 @@ function drawBarChart(data) {
 			'#d0743c',
 			'#ff8c00'
 		])
-
-	x0.domain(data.map(d => d.debt))
-	x1.domain(data.map(d => d.key)).rangeRound([0, x0.bandwidth()])
+	x0.domain(data.map(d => d.key))
+	x1.domain(data.map(d => d.name)).rangeRound([0, x0.bandwidth()])
 	y.domain([0, d3.max(data, d => d.debt)]).nice()
+
+	const structuredData = d3
+		.nest()
+		.key(d => d.key)
+		.entries(data)
 
 	g.append('g')
 		.selectAll('g')
-		.data(data)
+		.data(structuredData)
 		.enter()
 		.append('g')
-		.attr('transform', d => 'translate(' + x0(+d.debt) + ',0)')
+		.attr('transform', d => 'translate(' + x0(d.key) + ',0)')
 		.selectAll('rect')
-		.data(d => d)
+		.data(d => d.values.map(items => ({ key: items.key, ...items })))
 		.enter()
 		.append('rect')
-		.attr('x', d => x1(d.key))
+		.attr('x', d => x1(d.name))
 		.attr('y', d => y(d.debt))
 		.attr('width', x1.bandwidth())
 		.attr('height', d => height - y(d.debt))
-		.attr('fill', function(d) {
-			return z(d.debt)
+		.attr('fill', d => z(d.name))
+		.on('mouseover', function(d) {
+			d3.select('#tooltip')
+				.style('right', 2 + 'vw')
+				.style('top', 48 + 'vh')
+				.select('#value')
+				.text(
+					`
+					Per persoon moeten er ${d.debt} ${d.name} worden gekocht / verkocht.  
+					De prijs van een ${d.name} is €${d.price}`
+				)
+
+			d3.select('#tooltip').classed('hidden', false)
 		})
+		.on('mouseout', () => d3.select('#tooltip').classed('hidden', true))
 
 	g.append('g')
 		.attr('class', 'axis')
 		.attr('transform', 'translate(0,' + height + ')')
 		.call(d3.axisBottom(x0))
+		.append('text')
+		.attr('fill', '#fff')
+		.attr('font-weight', 'bold')
+		.attr('text-anchor', 'start')
+		.attr('transform', `translate(${width},0)`)
+		.text('Jaren')
 
 	g.append('g')
 		.attr('class', 'axis')
@@ -245,10 +262,10 @@ function drawBarChart(data) {
 		.attr('x', 2)
 		.attr('y', y(y.ticks().pop()) + 0.5)
 		.attr('dy', '0.32em')
-		.attr('fill', '#000')
+		.attr('fill', '#fff')
 		.attr('font-weight', 'bold')
 		.attr('text-anchor', 'start')
-		.text('Population')
+		.text('Aantallen')
 }
 
 function initSelectOption(data) {

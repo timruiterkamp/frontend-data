@@ -70,13 +70,21 @@
                     </section>
                     <section class="country-info" v-if='data.showCountryInfo'>
                         <h3>{{data.country}}</h3>
-                        <h4>Totaal aantal inwoners: {{formatNumbersByDots(data.population)}}</h4>
-                        <h4>Totale schuld: €{{formatNumbersByDots(data.debt[0])}}</h4>
-                        <h4>Totale schuld per inwoner: €{{formatNumbersByDots(data.pastDebtPerCitizen)}} </h4>
-
+                        <h4>Total population: {{formatNumbersByDots(data.population)}}</h4>
+                        <h4>Total debt: €{{formatNumbersByDots(data.debt[0])}}</h4>
+                        <h4>Total debt per citizen: €{{formatNumbersByDots(data.pastDebtPerCitizen)}} </h4>
+                        <p>The most famous dishes for this country are:</p>
+                        <ul>
+                            <li v-for="item in data.selectedCountryProducts">{{item.name}}</li>
+                        </ul>
                     </section>
-                    <svg class="countryDebtChart" v-show='data.showCountryInfo'></svg>
-
+                    <section class="chartData">
+                        <p>Hover the bars for more information!</p>
+                        <svg class="countryDebtChart" v-show='data.showCountryInfo'></svg>
+                        <div id="tooltip" class="hidden" v-show='data.showCountryInfo'>
+                            <p><span id="value"></span></p>
+                        </div>
+                    </section>
                 </div>
             </section>
         </main>

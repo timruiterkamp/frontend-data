@@ -12,7 +12,8 @@ const state = {
 		loaded: true,
 		countryItems: [],
 		currentDebtPerCitizen: 0,
-		pastDebtPerCitizen: 0
+		pastDebtPerCitizen: 0,
+		selectedCountryProducts: []
 	}
 }
 
