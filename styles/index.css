@@ -267,6 +267,15 @@ header h2 {
 	transform: scale(1.125);
 }
 
+.developing h2 {
+	color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 60%;
+    transform: translate(-50%, -50%);
+}
+
 .close-element p {
 	color: #fff;
 }
