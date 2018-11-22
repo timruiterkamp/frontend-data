@@ -179,8 +179,8 @@ function generateChartWithCountryInfo(data) {
 function drawBarChart(data) {
 	//chart based on https://bl.ocks.org/mbostock/3887051. Thanks Mike Bostock
 	const margin = { top: 60, right: 20, bottom: 30, left: 40 }
-	const width = 300 - margin.left - margin.right
-	const height = 600 - margin.top - margin.bottom
+	const width = 450 - margin.left - margin.right
+	const height = 400 - margin.top - margin.bottom
 
 	const svg = d3.select('.countryDebtChart')
 
