@@ -306,7 +306,7 @@ function drawBarChart(data) {
 			.call(d3.axisLeft(y).ticks(null, 's'))
 			.duration(500)
 
-		var barGroups = g.selectAll('g.bar').data(structuredData)
+		const barGroups = g.selectAll('g.bar').data(structuredData)
 		barGroups
 			.enter()
 			.append('g')
@@ -315,7 +315,7 @@ function drawBarChart(data) {
 
 		barGroups.exit().remove()
 
-		var bars = g
+		const bars = g
 			.selectAll('g.bar')
 			.selectAll('rect')
 			.data(d => d.values.map(items => ({ key: items.key, ...items })))

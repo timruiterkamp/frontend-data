@@ -33,7 +33,9 @@ function initRandomCountrySelector(data) {
 		state.data.showCountryInfo = true
 		state.data.country = randomCountry.country
 		state.data.debt = randomCountry.debt
-		state.data.population = randomCountry.population[0].value
+		state.data.population = randomCountry.population[0]
+			? randomCountry.population[0].value
+			: ''
 		state.data.currGeoLocation = {
 			lat: randomCountry.lat,
 			long: randomCountry.long

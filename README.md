@@ -8,11 +8,20 @@ The product can be found here: [https://frontend-data.netlify.com](https://front
 ## Table of contents
 
 * [Installation of the project](#Installation-of-the-project)
-* [Possible interactive solutions](#possible-interactive-solutions-️)
-* [Chosen interactive solutions](#Chosen-interactive-solutions)
-    * [Interactions](#interactions)
+* [Possible interactive solutions](#possible-interactive-research-cases-️)
+    * [OBA related](#OBA-related)
+    * [Not OBA related](#-Not-OBA-related)
+* [Chosen interactive solutions](#Chosen-interactive-case)
+    * [Subquestions](#subquestions)
 * [Overview research case](#Overview-research-case)
-    * [Sketches](#sketch-of-the-possible-outcome-️)
+    *[What is the total debt of countries](#What-is-the-total-debt-of-countries )
+    *[What continent do I choose](#What-continent-do-I-choose )
+    *[How big is the population](#How-big-is-the-population )
+    *[What are famous dishes / products per country](#What-are-famous-dishes-/-products-per-country )
+    *[Display the values](#Display-the-values)
+    *[How big is the debt per person](#How-big-is-the-debt-per-person)
+* [Sketching journey](#Sketching-journey-️)
+* [Outcome after all the filtering](#Outcome-after-all-the-filtering-)
 * [Result](#endresult-)
 * [Todo](#Yet-TODO)
 * [Conclusion](#Conclusion)
@@ -41,10 +50,10 @@ Open the index.html in the browser of use livereload from VS code.
 * How many books about military can you buy with the total expense of arms (per continent)
 
 ## Not OBA related
-* Give insight in the total dept of a country / region / continent.
+* Give insight in the total debt of a country / region / continent.
 * How many products do you need to buy/sell to pay off your countries debt.
   
-## Chosen interactive case
+# Chosen interactive case
 Combined all not OBA related cases which resulted in the research case:  
 - Give insight in the total debt of a country and how many debt this is per person.
     - How many of a famous product in a country do you need to sell to pay off the debt
@@ -56,36 +65,9 @@ Combined all not OBA related cases which resulted in the research case:
 * What continent do I choose
 * How big is the population
 * How big is the debt per person
-* How to show the dept properly
+* How to show the debt properly
   
 # Overview research case
-
-## What are famous dishes / products per country
-To answer this me and my girlfriend searched the web, mostly cookbooks en restaurant reviews to gain insight in famous dishes / products and their prices. It was quite difficult to find all the prices as some dishes are a combination of multiple food sorts.  In the end I got quite some products and it looked like this in JSON format:
-
-```JSON
-[
-    { 
-        "key": "Slovakia",
-        "food": [
-            { "name": "Halušky",
-                "price": 7.00,
-                "amount": 1
-            },
-            { "name": "Lokše",
-                "price": 2.00,
-                "amount": 1
-            },
-            { "name": "Bryndzové pirohy",
-                "price": 3.00,
-                "amount": 5
-            }]
-    }
-]
-```
-
-Unfortunately I did not find the right price by every item so I guessed what a combination of products would cost in a little restaurant. The most expensive products are mostly liquor, with champagn being the most expensive. The complete meals vary from €7 to €22.
-
 
 ## What is the total debt of countries  
 To research this is searched multiple government websites to get a somewhat complete dataset of countries and their debt.
@@ -187,6 +169,34 @@ Step 1 in this section is look for data about populations. So I reached out to t
 ```
 The data contained insight in the population numbers between 1961 and 2016. At the start of the project I just used the most recent population number. In the near future I could use the increase in population to compare to the debt increase/decrease.
 
+
+## What are famous dishes / products per country
+To answer this me and my girlfriend searched the web, mostly cookbooks en restaurant reviews to gain insight in famous dishes / products and their prices. It was quite difficult to find all the prices as some dishes are a combination of multiple food sorts.  In the end I got quite some products and it looked like this in JSON format:
+
+```JSON
+[
+    { 
+        "key": "Slovakia",
+        "food": [
+            { "name": "Halušky",
+                "price": 7.00,
+                "amount": 1
+            },
+            { "name": "Lokše",
+                "price": 2.00,
+                "amount": 1
+            },
+            { "name": "Bryndzové pirohy",
+                "price": 3.00,
+                "amount": 5
+            }]
+    }
+]
+```
+
+Unfortunately I did not find the right price by every item so I guessed what a combination of products would cost in a little restaurant. The most expensive products are mostly liquor, with champagn being the most expensive. The complete meals vary from €7 to €22.
+
+
 ## Display the values
 Every dataset I found has some sort of indicator to what country it belongs. Since I am working with countries my immediate thoughts were to use a map. So to display the data on a map I would need GEO locations from all countries. Luckily Google had all these data points. 
 
@@ -224,8 +234,8 @@ value: "9696110"
 
 During this filtering the country name was used to compare and merge data. To watch the full function, you can go to [The actual code](https://github.com/timruiterkamp/frontend-data/blob/158d1452eee787466cc29bba17340f1d9980e280/scripts/stateData.js#L43)
 
-## How big is the dept per person
-To calculate the dept per person I used the total debt and divided it by the total population. For the current status of the project this is a great use case. But when I would take more time for this, I would've searched for the total toddlers / kids in a country and exclude them from the total population. Because this share of the population don't really have money and are supervised by their parents.  
+## How big is the debt per person
+To calculate the debt per person I used the total debt and divided it by the total population. For the current status of the project this is a great use case. But when I would take more time for this, I would've searched for the total toddlers / kids in a country and exclude them from the total population. Because this share of the population don't really have money and are supervised by their parents.  
 
 
 # Sketching journey ✏️
@@ -237,7 +247,7 @@ The first screen I designed was the overview of the countries.
 
 ![visualizing the data](https://github.com/timruiterkamp/frontend-data/blob/master/gh-images/intro-screen.jpg)
 
-The second screen I designed was the in depth situation of the country, where you zoom in on the country
+The second screen I designed was the in debth situation of the country, where you zoom in on the country
 ![showing data per country](https://github.com/timruiterkamp/frontend-data/blob/master/gh-images/active-country1.jpg)
 
 The third screen I designed was the overview of the debt per person by displaying what amount of items a person should buy/sell to pay off the debt.
@@ -258,14 +268,29 @@ The third screen I designed was the overview of the debt per person by displayin
    ![visualized data](https://github.com/timruiterkamp/frontend-data/blob/master/gh-images/data-display.png)
 
 ## Outcomes along the way 🚀
-  - France has a very big dept of 2 trillion euro's. It's the biggest dept in whole of europe as of 2017.
-  - Relatively Norway has the largest dept per person of €102.000. 
-  - Despite france having the largest dept, when you look at what it would cost per person the are just in the higher middle of all countries with a total of €30.000 per person.
+  - France has a very big debt of 2 trillion euro's. It's the biggest debt in whole of europe as of 2017.
+  - Relatively Norway has the largest debt per person of €102.000. 
+  - Despite france having the largest debt, when you look at what it would cost per person the are just in the higher middle of all countries with a total of €30.000 per person.
+  - Norway has a decreasing debt over the last year it lowered with 14 billion euro.
+    - This results in that people just have to buy 33.264 Kjøttkaker instead of 34.156.
 
 ## Endresult 📊
-  
+  At the end of the two weeks I've been working on this project and the result came quitte close to my first thoughts about the look and feel this product should have. I tried to stimulate exploring without too many steps in between.
+  To make this product easier to use, I created a small introduction screen with instruction you can follow, these instruction contain information on what the project is about and how to navigate through the data.
+  ![final product introduction](https://github.com/timruiterkamp/frontend-data/blob/master/gh-images/finalproduct-intro.png)
+
+  To create a nice flow through the product I defined some basic filters and ways to travel around in the beginning of the screen. In this way, without really requiring interaction the user can see some of the results from the data. I thought this was some important usage requirement because you don't want to force the user to spit through all the options. So I created a way to random go somewhere, filter on different aspects of the data and finding your own country by navigating or clicking on the country name in the dropdown list.
+  ![final product introduction](https://github.com/timruiterkamp/frontend-data/blob/master/gh-images/finalproduct-overview.png)
+
+  The next thing that I wanted to do was creating some interesting data comparison. So I found some popular dishes from the countries and used it to compare it to the total debt of the country. In this way you see how (sometimes absurd) amounts of a product you would need per person to pay off the debt and find out what dishes are popular within a country.
+   ![final product chart](https://github.com/timruiterkamp/frontend-data/blob/master/gh-images/finalproduct-chart.png)
+
 ## Conclusion
-  
+When I look back at this project, I am very glad I got the opportunity to use an other dataset than the OBA dataset. I enjoyed looking up my own data and trying out datasets and combining useful data together. Some things took a bit longer than expected as getting the right data structure. Looking back at my last project [Functional programming](https://github.com/timruiterkamp/functional-programming) I told myself to think way better of data structures, so I did try to build it with more thought. But still during the process I reconized that data is continuously changing the way the data should look. I have helped quitte alot of people during these two weeks and I think that those hours could result in more efficient and clean code and a better user interface. But helping others is always good, so I have no regrets and I'm mostly glad I finished my project and helped as much as I could.
+    
+A quick look back at difficulties I experienced, I think the D3 part of generating charts and update them the way I did was somewhat difficult and took some time. The problem I faced was that my trigger was a click on a object outside D3 (an svg generated on mapbox) and that resulted in that every click would generate a new chart on top of the previous chart. A check that would watch if the chart has been drawn fixed it eventually with some code tweekings.
+
+The past 6 weeks have been intensive when it comes to code due to the 3 different projects. But it were really good excercises and I can tell I'm way more comfortable trying things out and understanding how many aspects of javascript work and what they do. Also my D3 knowledge has improved a lot over the past weeks, I will definitely checkout other data analyzing libraries as chartJS and look at what the most remarkable differences are. In my opinion D3 is very powerful and has really great benefits but I'm still curious if it's efficient for smaller projects compared to something like chartJS.
 
 ## Techniques used
   * Mapbox
@@ -277,7 +302,9 @@ The third screen I designed was the overview of the debt per person by displayin
   
 
 ## Honorable mentions
-  
+  Jonah Meijers for helping me fix babel!
+  Folkert Jan van de Pol insights in display circles on mapbox
+  Laurens Aarnoudse for the Math.sqrt() function that gives a better perspective on the real scale of a circle.
 
 ## License
 [MIT LICENSE](license.txt)
