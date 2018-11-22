@@ -139,7 +139,7 @@ button:hover {
 	will-change: transform;
 	transition: 1.25s ease-in-out;
 	z-index: 2;
-	overflow: scroll;
+	overflow-y: scroll;
 }
 
 .map-display {

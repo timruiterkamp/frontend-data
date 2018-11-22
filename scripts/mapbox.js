@@ -194,17 +194,7 @@ function drawBarChart(data) {
 		.paddingInner(0.1)
 	const x1 = d3.scaleBand().padding(0.05)
 	const y = d3.scaleLinear().rangeRound([height, 0])
-	const z = d3
-		.scaleOrdinal()
-		.range([
-			'#98abc5',
-			'#8a89a6',
-			'#7b6888',
-			'#6b486b',
-			'#a05d56',
-			'#d0743c',
-			'#ff8c00'
-		])
+	const z = d3.scaleOrdinal().range(['#F7E3AF', '#F7AF9D', '#C08497'])
 	x0.domain(data.map(d => d.key))
 	x1.domain(data.map(d => d.name)).rangeRound([0, x0.bandwidth()])
 	y.domain([0, d3.max(data, d => d.debt)]).nice()
@@ -236,7 +226,7 @@ function drawBarChart(data) {
 				.select('#value')
 				.text(
 					`
-					every citizin should buy ${d.debt} ${d.name} to pay off the debt.
+					every citizin should buy / sell ${d.debt} ${d.name} to pay off the debt.
 					The price of a ${d.name} is €${d.price}`
 				)
 

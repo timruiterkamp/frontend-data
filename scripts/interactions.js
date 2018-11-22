@@ -30,9 +30,15 @@ flyToLocation.addEventListener('click', () => {
 function initRandomCountrySelector(data) {
 	randomCountry.addEventListener('click', () => {
 		const randomCountry = data[Math.floor(Math.random() * data.length)]
+		state.data.showCountryInfo = true
 		state.data.country = randomCountry.country
 		state.data.debt = randomCountry.debt
 		state.data.population = randomCountry.population[0].value
+		state.data.currGeoLocation = {
+			lat: randomCountry.lat,
+			long: randomCountry.long
+		}
+		state.data.selectedCountryProducts = randomCountry.food
 
 		map.flyTo({
 			center: [randomCountry.long, randomCountry.lat],
