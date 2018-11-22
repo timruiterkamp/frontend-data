@@ -26,8 +26,6 @@ map.on('load', () => {
 
 	filterAllData
 		.then(res => {
-			console.log(res)
-			// initDebtByYearSelection(res.map(d => d))
 			initSelectOption(res)
 			generateInformationTips(res.map(d => d))
 			generateListWithCountries('#countries', res.map(d => d))
@@ -60,10 +58,10 @@ function generateInformationTips(d, selectOption) {
 				if (selectOption == 'totaleSchuld') {
 					return (
 						Math.sqrt(
-							(+d.debt[0].replace(',', '').split('.')[0] / 6000) *
+							(+d.debt[0].replace(',', '').split('.')[0] /
+								60000) *
 								100
-						) +
-						3 * map.getZoom()
+						) + 3
 					)
 				} else if (selectOption == 'totalePopulatie') {
 					return d.population.length
@@ -73,10 +71,10 @@ function generateInformationTips(d, selectOption) {
 				} else {
 					return (
 						Math.sqrt(
-							(+d.debt[0].replace(',', '').split('.')[0] / 6000) *
+							(+d.debt[0].replace(',', '').split('.')[0] /
+								60000) *
 								100
-						) +
-						3 * map.getZoom()
+						) + 3
 					)
 				}
 			})
@@ -90,15 +88,6 @@ function generateInformationTips(d, selectOption) {
 		.on('move', () => update())
 		.on('moveend', () => update())
 		.on('zoom', () => update())
-}
-
-function getRadius(amount) {
-	const startZoom = 6
-	const minPointSize = 5
-	const radiusExp = (map.getZoom() - startZoom) * 0.75 + 1
-	return (amount * radiusExp) / 10 + minPointSize > minPointSize
-		? (amount * radiusExp) / 10 + minPointSize
-		: minPointSize
 }
 
 function generateListWithCountries(selection, d) {
@@ -163,33 +152,15 @@ function showCountryInformation(data) {
 	state.data.currGeoLocation = { lat: data.lat, long: data.long }
 }
 
-function attractActiveClass(country) {
-	const stateCountry = trimWhiteAndLowercase(state.data.country)
-	const selectedCountry = trimWhiteAndLowercase(country)
+// function attractActiveClass(country) {
+// 	const stateCountry = trimWhiteAndLowercase(state.data.country)
+// 	const selectedCountry = trimWhiteAndLowercase(country)
 
-	console.log()
+// 	console.log()
 
-	stateCountry == selectedCountry
-		? document.querySelector(`.${selectedCountry}`).classList.add('pulse')
-		: ''
-}
-
-// function initDebtByYearSelection(data) {
-// 	const yearSelection = d3
-// 		.select('#testing')
-// 		.append('select')
-// 		.attr('class', 'select')
-// 		.on('change', () => {
-// 			const values = d3.select('.select').property('value')
-// 			console.log(values)
-// 			state.data.currentYearSelection = values
-// 		})
-// 	const options = yearSelection
-// 		.selectAll('option')
-// 		.data(data[0].debt)
-// 		.enter()
-// 		.append('option')
-// 		.text(d => d.TIME)
+// 	stateCountry == selectedCountry
+// 		? document.querySelector(`.${selectedCountry}`).classList.add('pulse')
+// 		: ''
 // }
 
 function setCountryInformationWidth(statement) {
@@ -199,8 +170,8 @@ function setCountryInformationWidth(statement) {
 		: (infoWidth.style = 'width: 30vw; transform: translateX(0)')
 }
 
-function trimWhiteAndLowercase(str) {
-	return str.replace(' ', '').toLocaleLowerCase()
-}
+// function trimWhiteAndLowercase(str) {
+// 	return str.replace(' ', '').toLocaleLowerCase()
+// }
 
 export { map, generateListWithCountries, generateInformationTips }

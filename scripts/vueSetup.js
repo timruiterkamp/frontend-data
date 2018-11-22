@@ -9,7 +9,8 @@ const state = {
 		map: null,
 		currGeoLocation: [],
 		overviewIsClicked: false,
-		loaded: true
+		loaded: true,
+		countryItems: []
 	}
 }
 

@@ -1,7 +1,7 @@
 
 [
     { 
-        "country": "Italy",
+        "key": "Italy",
         "food": [
             { "name": "pizza margarita",
                 "price": 8.00,
@@ -17,7 +17,7 @@
             }]
     },
     { 
-        "country": "Cyprus",
+        "key": "Cyprus",
         "food": [
             { "name": "souvlakia",
                 "price": 1.50,
@@ -33,7 +33,7 @@
             }]
     },
     { 
-        "country": "Latvia",
+        "key": "Latvia",
         "food": [
             { "name": "beet soup",
                 "price": 3.00,
@@ -49,7 +49,7 @@
             }]
     },
     { 
-        "country": "Lithuania",
+        "key": "Lithuania",
         "food": [
             { "name": "cepelinai",
                 "price": 2.00,
@@ -65,7 +65,39 @@
             }]
     },
     { 
-        "country": "Luxembourg",
+        "key": "Greece",
+        "food": [
+            { "name": "Barbouni",
+                "price": 5.00,
+                "amount": 1
+            },
+            { "name": "Gyro(s)",
+                "price": 6.00,
+                "amount": 1
+            },
+            { "name": "ouzo",
+                "price": 16.00,
+                "amount": 1
+            }]
+    },
+    { 
+        "key": "Slovakia",
+        "food": [
+            { "name": "Halušky",
+                "price": 7.00,
+                "amount": 1
+            },
+            { "name": "Lokše",
+                "price": 2.00,
+                "amount": 1
+            },
+            { "name": "Bryndzové pirohy",
+                "price": 3.00,
+                "amount": 5
+            }]
+    },
+    { 
+        "key": "Luxembourg",
         "food": [
             { "name": "bouneschlupp",
                 "price": 4.00,
@@ -81,7 +113,7 @@
             }]
     },
     { 
-        "country": "Hungary",
+        "key": "Hungary",
         "food": [
             { "name": "goulash",
                 "price": 3.00,
@@ -97,7 +129,7 @@
             }]
     },
     { 
-        "country": "Malta",
+        "key": "Malta",
         "food": [
             { "name": "Ħobż tal-Malti",
                 "price": 1.50,
@@ -113,7 +145,7 @@
             }]
     },
     { 
-        "country": "Netherlands",
+        "key": "Netherlands",
         "food": [
             { "name": "bitterballen",
                 "price": 5.00,
@@ -129,8 +161,24 @@
             }]
     },
     { 
+        "key": "Austria",
+        "food": [
+            { "name": "kasekrainer",
+                "price": 13.00,
+                "amount": 6
+            },
+            { "name": "kaisersmarrn",
+                "price": 9.00,
+                "amount": 10
+            },
+            { "name": "Apfelstrudel",
+                "price": 2.50,
+                "amount": 1
+            }]
+    },
+    { 
         
-        "country": "Poland",
+        "key": "Poland",
         "food": [
             { "name": "wodka",
                 "price": 12.00,
@@ -146,7 +194,7 @@
             }]
     },
     { 
-        "country": "Portugal",
+        "key": "Portugal",
         "food": [
             { "name": "feijoada",
                 "price": 14.00,
@@ -162,7 +210,7 @@
             }]
     },
     { 
-        "country": "Romania",
+        "key": "Romania",
         "food": [
             { "name": "sarmale",
                 "price": 10.00,
@@ -178,7 +226,7 @@
             }]
     },
     { 
-        "country": "Slovenia",
+        "key": "Slovenia",
         "food": [
             { "name": "Aleluja",
                 "price": 2.50,
@@ -194,7 +242,7 @@
             }]
     },
     { 
-        "country": "Finland",
+        "key": "Finland",
         "food": [
             { "name": "KARJALANPIIRAKKA ",
                 "price": 8.00,
@@ -210,7 +258,7 @@
             }]
     },
     { 
-        "country": "Sweden",
+        "key": "Sweden",
         "food": [
             { "name": "Jansson’s temptation knäckebrød",
                 "price": 9.00,
@@ -226,7 +274,7 @@
             }]
     },
     { 
-        "country": "United Kingdom",
+        "key": "United Kingdom",
         "food": [
             { "name": "fish en chips",
                 "price": 7.00,
@@ -242,7 +290,7 @@
             }]
     },
     { 
-        "country": "Norway",
+        "key": "Norway",
         "food": [
             { "name": "Kjøttkaker",
                 "price": 3.00,
@@ -258,7 +306,7 @@
             }]
     },
     { 
-        "country": "Polen",
+        "key": "Poland",
         "food": [
             { "name": "pierogi",
                 "price": 7.00,
@@ -274,7 +322,7 @@
             }]
     },
     { 
-        "country": "Belgie",
+        "key": "Belgium",
         "food": [
             { "name": "belgische frites",
                 "price": 2.50,
@@ -290,7 +338,7 @@
             }]
     },
     { 
-        "country": "Duitsland",
+        "key": "Germany",
         "food": [
             { "name": "bratwurst",
                 "price": 1.30,
@@ -306,7 +354,7 @@
             }]
     },
     { 
-        "country": "Spanje",
+        "key": "Spain",
         "food": [
             { "name": "paella",
                 "price": 13.00,
@@ -322,7 +370,7 @@
             }]
     },
     { 
-        "country": "Bulgaria",
+        "key": "Bulgaria",
         "food": [
             { "name": "Banitsa",
                 "price": 4.00,
@@ -338,7 +386,7 @@
             }]
     },
     { 
-        "country": "Czech republic",
+        "key": "Czech Republic",
         "food": [
             { "name": "trudlník",
                 "price": 6.50,
@@ -354,7 +402,7 @@
             }]
     },
     { 
-        "country": "Denmark",
+        "key": "Denmark",
         "food": [
             { "name": "frikadeller",
                 "price": 3.00,
@@ -370,7 +418,7 @@
             }]
     },
     { 
-        "country": "Estonia",
+        "key": "Estonia",
         "food": [
             { "name": "rogge brood",
                 "price": 1.60,
@@ -386,7 +434,7 @@
             }]
     },
     { 
-        "country": "Ireland",
+        "key": "Ireland",
         "food": [
             { "name": "Guinness",
                 "price": 4.50,
@@ -402,7 +450,7 @@
             }]
     },
     { 
-        "country": "France",
+        "key": "France",
         "food": [
             { "name": "baguettes",
                 "price": 1.00,
@@ -418,7 +466,7 @@
             }]
     },
     { 
-        "country": "Croatia",
+        "key": "Croatia",
         "food": [
             { "name": "Potato Gnocchi",
                 "price": 16.00,

@@ -260,8 +260,6 @@ The third screen I designed was the overview of the debt per person by displayin
 
 ## Endresult 📊
   
-### Yet TODO
-  
 ## Conclusion
   
 

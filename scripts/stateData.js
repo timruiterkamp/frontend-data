@@ -1,10 +1,17 @@
-const files = [
+const csvFiles = [
 	'../data/worldGeoCodes.csv',
 	'../data/europeDebt.csv',
 	'../data/totalPopulation.csv'
 ]
 
-const filterAllData = Promise.all(files.map(url => d3.csv(url)))
+d3.json('../data/countryItems.json')
+	.then(values => {
+		state.data.countryItems = values
+		return values
+	})
+	.catch(err => err)
+
+const filterAllData = Promise.all(csvFiles.map(url => d3.csv(url)))
 	.then(values => {
 		const geoCodePerCountry = d3
 			.nest()
@@ -34,7 +41,8 @@ const filterAllData = Promise.all(files.map(url => d3.csv(url)))
 		let filteredDataObject = [].concat(
 			...debtPerCountry,
 			...populationPerCountry,
-			...geoCodePerCountry
+			...geoCodePerCountry,
+			...state.data.countryItems
 		)
 
 		return filteredDataObject
@@ -50,24 +58,27 @@ const filterAllData = Promise.all(files.map(url => d3.csv(url)))
 				country: items.key,
 				debt: items.values
 					.filter(d => d.UNIT == 'Million euro')
-					.map(d => d.debt),
+					.map(d => d.debt.replace(',', '').replace('.', '')),
 				population: items.values.filter(d =>
 					d.value > 500 ? d.value : ''
 				),
+				food: items.values
+					.map(d => (typeof d.food == 'object' ? d.food : ''))
+					.filter(d => (d ? d : ''))[0],
 				lat: items.values
 					.map(geolocation =>
 						typeof geolocation.value == 'object'
 							? geolocation.value[0].lat
 							: ''
 					)
-					.pop(),
+					.filter(d => (d ? d : ''))[0],
 				long: items.values
 					.map(geolocation =>
 						typeof geolocation.value == 'object'
 							? geolocation.value[0].long
 							: ''
 					)
-					.pop()
+					.filter(d => (d ? d : ''))[0]
 			}))
 
 		state.data.total = filterByCountry

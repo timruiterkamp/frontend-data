@@ -1,10 +1,9 @@
 import { filterAllData } from './stateData.js'
-import { map, generateInformationTips } from './mapbox.js'
+import { map } from './mapbox.js'
 
 // get all selectors
 const randomCountry = findElement('#nextItem')
 const flyToLocation = findElement('#flyToLocation')
-const mapIntro = findElement('.map-intro')
 const mapSection = findElement('.map-section')
 
 filterAllData.then(data => {
