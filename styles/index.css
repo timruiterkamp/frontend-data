@@ -267,7 +267,7 @@ header h2 {
 	transform: scale(1.125);
 }
 
-.developing h2 {
+.developing {
 	color: #fff;
     position: absolute;
     top: 50%;
