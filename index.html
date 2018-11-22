@@ -57,10 +57,11 @@
                 </header>
                 <div class="map-state-information">
                     <section class="country-display" v-show='!data.showCountryInfo'>
-                        <h3>Sorteer op:</h3>
+                        <h3>Filter:</h3>
                         <select id="mapDataFilter">
-                            <option selected value="totaleSchuld">Totale schuld</option>
-                            <option value="totalePopulatie">Totale populatie</option>
+                            <option selected value="totalDebt">Total debt</option>
+                            <option value="totalPopulation">Total population</option>
+                            <option value="totalDebtPerCitizen">Total debt per citizen</option>
                         </select>
                         <h3>Countries:</h3> 
                         <button id='nextItem'>Go to a random country</button>
@@ -68,9 +69,9 @@
                     </section>
                     <section class="country-info" v-if='data.showCountryInfo'>
                         <h3>{{data.country}}</h3>
-                        <h4>Totaal aantal inwoners: {{data.population}}</h4>
-                        <h4>Totale schuld: €{{data.debt[0]}} Miljoen (€{{data.debt[0]}}000000)</h4>
-                        <h4>Totale schuld per inwoner: €{{data.debtPerCitizen}} </h4>
+                        <h4>Totaal aantal inwoners: {{formatNumbersByDots(data.population)}}</h4>
+                        <h4>Totale schuld: €{{formatNumbersByDots(data.debt[0])}}</h4>
+                        <h4>Totale schuld per inwoner: €{{formatNumbersByDots(data.debtPerCitizen)}} </h4>
                     </section>
                 </div>
             </section>

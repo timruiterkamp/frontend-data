@@ -55,11 +55,20 @@ function generateInformationTips(d, selectOption) {
 			.transition()
 			.duration(750)
 			.attr('r', d => {
-				if (selectOption == 'totaleSchuld') {
-					return Math.sqrt((+d.debt[0] / 10e9) * 100) + 3
-				} else if (selectOption == 'totalePopulatie') {
+				if (selectOption == 'totalDebt') {
+					return Math.sqrt((+d.debt[0] / 10e10) * 100) + 3
+				} else if (selectOption == 'totalPopulation') {
 					return d.population.length
 						? Math.sqrt((+d.population[0].value / 10e6) * 100) + 3
+						: 0
+				} else if (selectOption == 'totalDebtPerCitizen') {
+					return d.population.length
+						? Math.sqrt(
+								(+d.debt[0] /
+									10e10 /
+									(+d.population[0].value / 10e6)) *
+									100
+						  ) + 3
 						: 0
 				} else {
 					return Math.sqrt((+d.debt[0] / 10e10) * 100) + 3
@@ -126,8 +135,11 @@ function showCountryInformation(data) {
 }
 
 function calculateDebtPerPerson(data) {
-	const debtInEuros = data.debt[0] * 1000000
-	const population = data.population ? data.population[0].value : ''
+	console.log(data)
+	const debtInEuros = data.debt[0] ? data.debt[0] : data.debt
+	const population = data.population[0].value
+		? data.population[0].value
+		: data.population
 	const debt = (debtInEuros / population).toFixed(2)
 	state.data.debtPerCitizen = debt
 }

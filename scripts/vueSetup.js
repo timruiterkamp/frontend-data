@@ -30,6 +30,9 @@ const app = new Vue({
 				})
 			}
 		},
+		formatNumbersByDots: data => {
+			data.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.')
+		},
 		setCenter: () => {
 			state.data.map
 				? state.data.map.flyTo({
