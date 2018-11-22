@@ -236,8 +236,8 @@ function drawBarChart(data) {
 				.select('#value')
 				.text(
 					`
-					Per persoon moeten er ${d.debt} ${d.name} worden gekocht / verkocht.  
-					De prijs van een ${d.name} is €${d.price}`
+					every citizin should buy ${d.debt} ${d.name} to pay off the debt.
+					The price of a ${d.name} is €${d.price}`
 				)
 
 			d3.select('#tooltip').classed('hidden', false)
