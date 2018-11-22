@@ -19,7 +19,7 @@ The product can be found here: [https://frontend-data.netlify.com](https://front
     * [How big is the population](#How-big-is-the-population )  
     * [What are famous dishes / products per country](#What-are-famous-dishes-/-products-per-country )  
     * [Display the values](#Display-the-values)  
-    *[How big is the debt per person](#How-big-is-the-debt-per-person)  
+    * [How big is the debt per person](#How-big-is-the-debt-per-person)  
 * [Sketching journey](#Sketching-journey-️)  
 * [Outcome after all the filtering](#Outcome-after-all-the-filtering-)  
 * [Result](#endresult-)  
