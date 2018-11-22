@@ -3,6 +3,7 @@ mapboxgl.accessToken =
 
 import { filterAllData } from './stateData.js'
 
+// init mapbox
 const map = new mapboxgl.Map({
 	container: 'map',
 	style: 'mapbox://styles/noclue4u/cjoeoyn8u0htn2sobi8b7qy5k',
@@ -56,7 +57,7 @@ function generateInformationTips(d, selectOption) {
 			.duration(750)
 			.attr('r', d => {
 				if (selectOption == 'totalDebt') {
-					return Math.sqrt((+d.debt[0] / 10e10) * 100) + 3
+					return Math.sqrt((+d.debt[1] / 10e10) * 100) + 3
 				} else if (selectOption == 'totalPopulation') {
 					return d.population.length
 						? Math.sqrt((+d.population[0].value / 10e6) * 100) + 3
@@ -64,14 +65,14 @@ function generateInformationTips(d, selectOption) {
 				} else if (selectOption == 'totalDebtPerCitizen') {
 					return d.population.length
 						? Math.sqrt(
-								(+d.debt[0] /
+								(+d.debt[1] /
 									10e10 /
 									(+d.population[0].value / 10e6)) *
 									100
 						  ) + 3
 						: 0
 				} else {
-					return Math.sqrt((+d.debt[0] / 10e10) * 100) + 3
+					return Math.sqrt((+d.debt[1] / 10e10) * 100) + 3
 				}
 			})
 	}
@@ -87,7 +88,7 @@ function generateInformationTips(d, selectOption) {
 }
 
 function generateListWithCountries(selection, d) {
-	var select = d3
+	const select = d3
 		.select(selection)
 		.append('select')
 		.attr('class', 'countrySelection')
@@ -95,9 +96,7 @@ function generateListWithCountries(selection, d) {
 			const value = d3.select('.countrySelection').property('value')
 			return d
 				.filter(country => country.country == value)
-				.map(d => {
-					toggleCountryInfo(d)
-				})
+				.map(d => toggleCountryInfo(d))
 		})
 
 	select
@@ -112,6 +111,10 @@ function toggleCountryInfo(d) {
 	calculateDebtPerPerson(d)
 	setCountryInformationWidth('increase')
 	showCountryInformation(d)
+
+	if (state.data.showCountryInfo) {
+		generateChartWithCountryInfo(d)
+	}
 
 	map.flyTo({
 		center: [
@@ -135,13 +138,117 @@ function showCountryInformation(data) {
 }
 
 function calculateDebtPerPerson(data) {
+	const pastDebtInEuros = data.debt[0] ? data.debt[0] : 0
+	const currentDebtInEuros = data.debt[1] ? data.debt[1] : data.debt
+	const population = data.population[0].value ? data.population[0].value : ''
+	const currentDebt = (currentDebtInEuros / population).toFixed(2)
+	const pastDebt = (pastDebtInEuros / population).toFixed(2)
+
+	state.data.currentDebtPerCitizen = currentDebt
+	state.data.pastDebtPerCitizen = pastDebt
+}
+
+function generateChartWithCountryInfo(data) {
+	const debtCurrentYear = []
+	const debtPastYear = []
+
+	data.food.map(food => {
+		const newFoodObject = {
+			debt: Number(
+				(state.data.currentDebtPerCitizen / food.price).toFixed(0)
+			),
+			...food
+		}
+		const pastFoodObject = {
+			debt: Number(
+				(state.data.pastDebtPerCitizen / food.price).toFixed(0)
+			),
+			...food
+		}
+		debtCurrentYear.push({ key: 2017, ...newFoodObject })
+		debtPastYear.push({ key: 2016, ...pastFoodObject })
+	})
+	const debtPerYear = [].concat(debtPastYear, debtCurrentYear)
+
+	if (debtPerYear) {
+		drawBarChart(debtPerYear)
+	}
+}
+
+function drawBarChart(data) {
 	console.log(data)
-	const debtInEuros = data.debt[0] ? data.debt[0] : data.debt
-	const population = data.population[0].value
-		? data.population[0].value
-		: data.population
-	const debt = (debtInEuros / population).toFixed(2)
-	state.data.debtPerCitizen = debt
+	const svg = d3.select('.countryDebtChart'),
+		margin = { top: 20, right: 20, bottom: 30, left: 40 },
+		width = 300 - margin.left - margin.right,
+		height = 600 - margin.top - margin.bottom,
+		g = svg
+			.append('g')
+			.attr('width', width)
+			.attr('height', height)
+			.attr(
+				'transform',
+				'translate(' + margin.left + ',' + margin.top + ')'
+			)
+
+	const x0 = d3
+		.scaleBand()
+		.rangeRound([0, 360])
+		.paddingInner(0.1)
+
+	const x1 = d3.scaleBand().padding(0.05)
+
+	const y = d3.scaleLinear().rangeRound([height, 0])
+
+	const z = d3
+		.scaleOrdinal()
+		.range([
+			'#98abc5',
+			'#8a89a6',
+			'#7b6888',
+			'#6b486b',
+			'#a05d56',
+			'#d0743c',
+			'#ff8c00'
+		])
+
+	x0.domain(data.map(d => d.debt))
+	x1.domain(data.map(d => d.key)).rangeRound([0, x0.bandwidth()])
+	y.domain([0, d3.max(data, d => d.debt)]).nice()
+
+	g.append('g')
+		.selectAll('g')
+		.data(data)
+		.enter()
+		.append('g')
+		.attr('transform', d => 'translate(' + x0(+d.debt) + ',0)')
+		.selectAll('rect')
+		.data(d => d)
+		.enter()
+		.append('rect')
+		.attr('x', d => x1(d.key))
+		.attr('y', d => y(d.debt))
+		.attr('width', x1.bandwidth())
+		.attr('height', d => height - y(d.debt))
+		.attr('fill', function(d) {
+			return z(d.debt)
+		})
+
+	g.append('g')
+		.attr('class', 'axis')
+		.attr('transform', 'translate(0,' + height + ')')
+		.call(d3.axisBottom(x0))
+
+	g.append('g')
+		.attr('class', 'axis')
+		.call(d3.axisLeft(y).ticks(null, 's'))
+		.append('text')
+		.attr('x', 2)
+		.attr('y', y(y.ticks().pop()) + 0.5)
+		.attr('dy', '0.32em')
+		.attr('fill', '#000')
+		.attr('font-weight', 'bold')
+		.attr('text-anchor', 'start')
+		.text('Population')
 }
 
 function initSelectOption(data) {

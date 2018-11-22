@@ -4,7 +4,8 @@ body {
 	top: 0;
 	right: 0;
 	bottom: 0;
-	left: 0;
+    left: 0;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .centerMap,
@@ -272,6 +273,10 @@ header h2 {
     from {transform: scale(1)}
     to {transform: scale(1.3)}
 } */
+
+.countryDebtChart {
+	background-color: #C7D9D9;
+}
 
 .fadeIn-enter-active {
 	transition: all 0.3s ease;

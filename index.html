@@ -11,6 +11,7 @@
             href="https://api.tiles.mapbox.com/mapbox-gl-js/v0.49.0/mapbox-gl.css"
             rel="stylesheet"
         />
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     </head>
     <body>
         <main id="app">
@@ -71,8 +72,11 @@
                         <h3>{{data.country}}</h3>
                         <h4>Totaal aantal inwoners: {{formatNumbersByDots(data.population)}}</h4>
                         <h4>Totale schuld: €{{formatNumbersByDots(data.debt[0])}}</h4>
-                        <h4>Totale schuld per inwoner: €{{formatNumbersByDots(data.debtPerCitizen)}} </h4>
+                        <h4>Totale schuld per inwoner: €{{formatNumbersByDots(data.pastDebtPerCitizen)}} </h4>
+
                     </section>
+                    <svg class="countryDebtChart" v-show='data.showCountryInfo'></svg>
+
                 </div>
             </section>
         </main>

@@ -259,7 +259,8 @@ The third screen I designed was the overview of the debt per person by displayin
 
 ## Outcomes along the way 🚀
   - France has a very big dept of 2 trillion euro's. It's the biggest dept in whole of europe as of 2017.
-
+  - Relatively Norway has the largest dept per person of €102.000. 
+  - Despite france having the largest dept, when you look at what it would cost per person the are just in the higher middle of all countries with a total of €30.000 per person.
 
 ## Endresult 📊
   

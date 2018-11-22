@@ -11,7 +11,8 @@ const state = {
 		overviewIsClicked: false,
 		loaded: true,
 		countryItems: [],
-		debtPerCitizen: 0
+		currentDebtPerCitizen: 0,
+		pastDebtPerCitizen: 0
 	}
 }
 
@@ -31,7 +32,7 @@ const app = new Vue({
 			}
 		},
 		formatNumbersByDots: data => {
-			data.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.')
+			return data.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.')
 		},
 		setCenter: () => {
 			state.data.map
