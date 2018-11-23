@@ -36,9 +36,10 @@ The product can be found here: [https://frontend-data.netlify.com](https://front
 ## Installation of the project 
 
 ```bash
-git clone https://github.com/timruiterkamp/frontend-data.git
-cd frontend-data
-Open the index.html in the browser of use livereload from VS code.
+git clone https://github.com/timruiterkamp/frontend-data.git  
+cd frontend-data  
+npm install  
+npm run dev  
 ```
 
 # Possible interactive research cases 🕵️
@@ -294,6 +295,9 @@ A quick look back at difficulties I experienced, I think the D3 part of generati
 
 The past 6 weeks have been intensive when it comes to code due to the 3 different projects. But it were really good excercises and I can tell I'm way more comfortable trying things out and understanding how many aspects of javascript work and what they do. Also my D3 knowledge has improved a lot over the past weeks, I will definitely checkout other data analyzing libraries as chartJS and look at what the most remarkable differences are. In my opinion D3 is very powerful and has really great benefits but I'm still curious if it's efficient for smaller projects compared to something like chartJS.
 
+## Presentation D3.nest()
+During these last two weeks I've had the opportunity to share my knowledge with my co-students about `D3.nest()`. The presentation mostly included examples of how and why you would use it. The feedback I got from other students were very positive and the told me that they understand the functionality way better after the presentation. 
+
 ## Techniques used
   * Mapbox
   * D3
@@ -326,9 +330,9 @@ The past 6 weeks have been intensive when it comes to code due to the 3 differen
 
 
 ## Honorable mentions
-  Jonah Meijers for helping me fix the webpack config! (Due to the short amount of time in the end I asked Jonah if he had a working webpack config, he had one and helped me install it into my project.)  
-  Folkert Jan van de Pol insights in display circles on mapbox  
-  Laurens Aarnoudse for the Math.sqrt() function that gives a better perspective on the real scale of a circle.  
+  * Jonah Meijers for helping me fix the webpack config! (Due to the short amount of time in the end I asked Jonah if he had a working webpack config, he had one and helped me install it into my project.)  
+  * Folkert Jan van de Pol insights in display circles on mapbox  
+  * Laurens Aarnoudse for the Math.sqrt() function that gives a better perspective on the real scale of a circle.  
 
 ## Sources 
 * [Datasets of debt and population](http://data.europa.eu/euodp/data/dataset)  
