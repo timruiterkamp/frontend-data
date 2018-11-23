@@ -299,12 +299,34 @@ The past 6 weeks have been intensive when it comes to code due to the 3 differen
   * VueJS
 
 ## Code description
-  
+| Files   |      Description      |
+|----------|-------------|
+| index.html |  Base of the code where the application is setup|
+| ./src/* |  Folder with all the scripts and styling |
+| ./src/scripts |  Folder with all the scripts |
+| ./src/scripts/index |  The initialize file of the map and charts |
+| ./src/scripts/stateData |  The file where the data is being filtered |
+| ./src/scripts/vueSetup |  The file where the Vue is being initialized and state is being made |
+| ./src/scripts/interactions |  The file where the interactions of the elements take place|
+| ./src/styles |  Folder with all the styling |
+| ./src/styles/index.css |  Folder with all the styling |
+| ./dist/ |  Folder with the compiled code |
+| ./dist/index |  Webpack code |
+| ./dist/wps-hmr |  Webpack config code |
+| ./dist/index.css |  compiled styling |
+| ./data/ |  Folder with all the data files |
+| ./data/countryItems.json |  File with all the products per country |
+| ./data/europeDebt.csv |  File with all the debt per country |
+| ./data/totalPopulation.json |  File with the population per country |
+| ./data/worldGeoCodes.json |  File with all the geocodes per country |
+| ./gh-images | Folder with the images used in the readme |
+| ./assets |  Folder with the icons used in the application |
+
 
 ## Honorable mentions
-  Jonah Meijers for helping me fix babel!
-  Folkert Jan van de Pol insights in display circles on mapbox
-  Laurens Aarnoudse for the Math.sqrt() function that gives a better perspective on the real scale of a circle.
+  Jonah Meijers for helping me fix the webpack config! (Due to the short amount of time in the end I asked Jonah if he had a working webpack config, he had one and helped me install it into my project.) 
+  Folkert Jan van de Pol insights in display circles on mapbox  
+  Laurens Aarnoudse for the Math.sqrt() function that gives a better perspective on the real scale of a circle.  
 
 ## License
 [MIT LICENSE](license.txt)
