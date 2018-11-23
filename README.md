@@ -243,17 +243,17 @@ To calculate the debt per person I used the total debt and divided it by the tot
 
 # Sketching journey ✏️
 
-So a big step back to the beginning of the project. I was thinking of doing something other than comparing book genres and searched for something with money, countries and a worldmap. Some ideas I sketched out were:
+So a big step back to the beginning of the project. I was thinking of doing something other than comparing book genres and searched for something with money, countries and a worldmap. Some ideas I sketched out were:  
 
 ![Sketching the data](https://github.com/timruiterkamp/frontend-data/blob/master/gh-images/sketches.jpg)
-The first screen I designed was the overview of the countries.
 
+The first screen I designed was the overview of the countries.  
 ![visualizing the data](https://github.com/timruiterkamp/frontend-data/blob/master/gh-images/intro-screen.jpg)
 
-The second screen I designed was the in debth situation of the country, where you zoom in on the country
+The second screen I designed was the in debth situation of the country, where you zoom in on the country  
 ![showing data per country](https://github.com/timruiterkamp/frontend-data/blob/master/gh-images/active-country1.jpg)
 
-The third screen I designed was the overview of the debt per person by displaying what amount of items a person should buy/sell to pay off the debt.
+The third screen I designed was the overview of the debt per person by displaying what amount of items a person should buy/sell to pay off the debt.  
 ![Showing ](https://github.com/timruiterkamp/frontend-data/blob/master/gh-images/active-country2.jpg)
 
 
@@ -271,14 +271,14 @@ The third screen I designed was the overview of the debt per person by displayin
    ![visualized data](https://github.com/timruiterkamp/frontend-data/blob/master/gh-images/data-display.png)
 
 ## Outcomes along the way 🚀
-  - France has a very big debt of 2 trillion euro's. It's the biggest debt in whole of europe as of 2017.
-  - Relatively Norway has the largest debt per person of €102.000. 
-  - Despite france having the largest debt, when you look at what it would cost per person the are just in the higher middle of all countries with a total of €30.000 per person.
-  - Norway has a decreasing debt over the last year it lowered with 14 billion euro.
-    - This results in that people just have to buy 33.264 Kjøttkaker instead of 34.156.
+  - France has a very big debt of 2 trillion euro's. It's the biggest debt in whole of europe as of 2017.  
+  - Relatively Norway has the largest debt per person of €102.000.   
+  - Despite france having the largest debt, when you look at what it would cost per person the are just in the higher middle of all countries with a total of €30.000 per person.  
+  - Norway has a decreasing debt over the last year it lowered with 14 billion euro.  
+    - This results in that people just have to buy 33.264 Kjøttkaker instead of 34.156.  
 
 ## Endresult 📊
-  At the end of the two weeks I've been working on this project and the result came quitte close to my first thoughts about the look and feel this product should have. I tried to stimulate exploring without too many steps in between.
+  At the end of the two weeks I've been working on this project and the result came quite close to my first thoughts about the look and feel this product should have. I tried to stimulate exploring without too many steps in between.  
   To make this product easier to use, I created a small introduction screen with instruction you can follow, these instruction contain information on what the project is about and how to navigate through the data.
   ![final product introduction](https://github.com/timruiterkamp/frontend-data/blob/master/gh-images/finalproduct-intro.png)
 
@@ -289,7 +289,7 @@ The third screen I designed was the overview of the debt per person by displayin
    ![final product chart](https://github.com/timruiterkamp/frontend-data/blob/master/gh-images/finalproduct-chart.png)
 
 ## Conclusion
-When I look back at this project, I am very glad I got the opportunity to use an other dataset than the OBA dataset. I enjoyed looking up my own data and trying out datasets and combining useful data together. Some things took a bit longer than expected as getting the right data structure. Looking back at my last project [Functional programming](https://github.com/timruiterkamp/functional-programming) I told myself to think way better of data structures, so I did try to build it with more thought. But still during the process I reconized that data is continuously changing the way the data should look. I have helped quitte alot of people during these two weeks and I think that those hours could result in more efficient and clean code and a better user interface. But helping others is always good, so I have no regrets and I'm mostly glad I finished my project and helped as much as I could.
+When I look back at this project, I am very glad I got the opportunity to use an other dataset than the OBA dataset. I enjoyed looking up my own data and trying out datasets and combining useful data together. Some things took a bit longer than expected as getting the right data structure. Looking back at my last project [Functional programming](https://github.com/timruiterkamp/functional-programming) I told myself to think way better of data structures, so I did try to build it with more thought. But still during the process I reconized that data is continuously changing the way the data should look. I have helped quite alot of people during these two weeks and I think that those hours could result in more efficient and clean code and a better user interface. But helping others is always good, so I have no regrets and I'm mostly glad I finished my project and helped as much as I could.
     
 A quick look back at difficulties I experienced, I think the D3 part of generating charts and update them the way I did was somewhat difficult and took some time. The problem I faced was that my trigger was a click on a object outside D3 (an svg generated on mapbox) and that resulted in that every click would generate a new chart on top of the previous chart. A check that would watch if the chart has been drawn fixed it eventually with some code tweekings.
 
@@ -297,6 +297,8 @@ The past 6 weeks have been intensive when it comes to code due to the 3 differen
 
 ## Presentation D3.nest()
 During these last two weeks I've had the opportunity to share my knowledge with my co-students about `D3.nest()`. The presentation mostly included examples of how and why you would use it. The feedback I got from other students were very positive and the told me that they understand the functionality way better after the presentation. 
+
+Fun note, after the presentation I shared my code with the students and I reconized they were using it in their own code to try it out and refactor it to their own needs. I thought this was quite fun to see your examples being used for their own project
 
 ## Techniques used
   * Mapbox
