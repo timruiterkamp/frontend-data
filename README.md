@@ -28,7 +28,7 @@ The product can be found here: [https://frontend-data.netlify.com](https://front
 * [Code description](#Code-description) 
 * [Honorable mentions](#Honorable-mentions) 
 * [Sources](#Sources)  
-* [Todo / issues](#-Todo-/-issues)
+* [Todo / issues](#Todo-/-issues)
 
 
 
