@@ -23,7 +23,6 @@ The product can be found here: [https://frontend-data.netlify.com](https://front
 * [Sketching journey](#Sketching-journey-️)  
 * [Outcome after all the filtering](#Outcome-after-all-the-filtering-)  
 * [Result](#endresult-)  
-* [Todo](#Yet-TODO)  
 * [Conclusion](#Conclusion)  
 * [Techniques used](#Techniques-used)  
 * [Code description](#Code-description) 
