@@ -329,10 +329,10 @@ The past 6 weeks have been intensive when it comes to code due to the 3 differen
   Laurens Aarnoudse for the Math.sqrt() function that gives a better perspective on the real scale of a circle.  
 
 ## Sources 
-[Datasets of debt and population](http://data.europa.eu/euodp/data/dataset)
-[Mapbox information](https://www.mapbox.com/help/define-geocoding/)
-[Famous foods from wikipedia (search for country dishes)](https://wikipedia.com)
-[Country geocodes](https://developers.google.com/public-data/docs/canonical/countries_csv)
+[Datasets of debt and population](http://data.europa.eu/euodp/data/dataset)  
+[Mapbox information](https://www.mapbox.com/help/define-geocoding/)  
+[Famous foods from wikipedia (search for country dishes)](https://wikipedia.com)  
+[Country geocodes](https://developers.google.com/public-data/docs/canonical/countries_csv)  
 
 ## License
 [MIT LICENSE](license.txt)
