@@ -23,11 +23,11 @@ const app = new Vue({
 	data: state,
 	methods: {
 		closeCountryInfo: () => {
-			state.data.showCountryInfo = false
+			this.showCountryInfo = false
 			document.querySelector('.map-section').style =
 				'width: 30vw; transform: translateX(0)'
-			if (state.data.map) {
-				state.data.map.flyTo({
+			if (this.map) {
+				this.map.flyTo({
 					pitch: 0,
 					zoom: 4
 				})
@@ -37,8 +37,8 @@ const app = new Vue({
 			return data.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.')
 		},
 		setCenter: () => {
-			state.data.map
-				? state.data.map.flyTo({
+			this.map
+				? this.map.flyTo({
 						pitch: 0,
 						center: [10.214134, 47.440152],
 						zoom: 4
@@ -46,7 +46,9 @@ const app = new Vue({
 				: ''
 		},
 		setOverviewClickedStatus: () => {
-			state.data.overviewIsClicked = !state.data.overviewIsClicked
+			this.overviewIsClicked = !this.overviewIsClicked
 		}
 	}
 })
+
+export default app
