@@ -40,6 +40,7 @@ git clone https://github.com/timruiterkamp/frontend-data.git
 cd frontend-data  
 npm install  
 npm run dev  
+// Have fun exploring!
 ```
 
 # Possible interactive research cases 🕵️
