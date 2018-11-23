@@ -1,5 +1,6 @@
 import { filterAllData } from './stateData.js'
 import { map, generateChartWithCountryInfo } from './index.js'
+import app from './vueSetup'
 
 // get all selectors
 const randomCountry = findElement('#nextItem')
@@ -12,7 +13,7 @@ filterAllData.then(data => {
 
 // Event listeners
 flyToLocation.addEventListener('click', () => {
-	state.data.init = false
+	app.init = false
 	styleBeforeElement('#map:before', {
 		display: 'none'
 	})
@@ -30,17 +31,15 @@ flyToLocation.addEventListener('click', () => {
 function initRandomCountrySelector(data) {
 	randomCountry.addEventListener('click', () => {
 		const randomCountry = data[Math.floor(Math.random() * data.length)]
-		state.data.showCountryInfo = true
-		state.data.country = randomCountry.country
-		state.data.debt = randomCountry.debt
-		state.data.population = randomCountry.population[0]
-			? randomCountry.population[0].value
-			: ''
-		state.data.currGeoLocation = {
+		app.showCountryInfo = true
+		app.country = randomCountry.country
+		app.debt = randomCountry.debt
+		app.population = randomCountry.population[0].value
+		app.currGeoLocation = {
 			lat: randomCountry.lat,
 			long: randomCountry.long
 		}
-		state.data.selectedCountryProducts = randomCountry.food
+		app.selectedCountryProducts = randomCountry.food
 
 		generateChartWithCountryInfo(randomCountry)
 
