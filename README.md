@@ -1,4 +1,4 @@
-# Frontend data - High school of Amsterdam
+# Frontend data - University of Applied Sciences Amsterdam
 
 In this project I will research the possibilities of how I can make meaningful interactions to give better insight in the debt of European countries.
 
