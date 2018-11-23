@@ -40,7 +40,7 @@ module.exports = {
 				use: {
 					loader: 'babel-loader',
 					options: {
-						presets: [['@babel/preset-env', { targets: 'ie > 10' }]]
+						presets: [['@babel/preset-env', { targets: 'ie > 10', modules: false }]]
 					}
 				}
 			},
@@ -63,7 +63,7 @@ module.exports = {
 			filename: 'index.css'
 		}),
 		new Serve({
-			hmr: false,
+			hmr: true,
 			liveReload: true,
 			port: 1337
 		})

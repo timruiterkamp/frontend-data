@@ -1,45 +1,47 @@
 import { filterAllData } from './stateData.js'
 import { map, generateChartWithCountryInfo } from './index.js'
-import app from './vueSetup'
 
-// get all selectors
 const randomCountry = findElement('#nextItem')
-const flyToLocation = findElement('#flyToLocation')
-const mapSection = findElement('.map-section')
 
-filterAllData.then(data => {
-	initRandomCountrySelector(data)
-})
+function initInteractions() {
+	const flyToLocation = findElement('#flyToLocation')
+	const mapSection = findElement('.map-section')
 
-// Event listeners
-flyToLocation.addEventListener('click', () => {
-	app.init = false
-	styleBeforeElement('#map:before', {
-		display: 'none'
+	filterAllData.then(data => {
+		initRandomCountrySelector(data)
 	})
-	map.flyTo({
-		zoom: 4,
-		bearing: 0,
-		speed: 0.7,
-		curve: 1
+
+	// Event listeners
+	flyToLocation.addEventListener('click', () => {
+		state.data.init = false
+
+		styleBeforeElement('#map:before', {
+			display: 'none'
+		})
+		map.flyTo({
+			zoom: 4,
+			bearing: 0,
+			speed: 0.7,
+			curve: 1
+		})
+		setTimeout(() => {
+			mapSection.style = 'transform: translateX(0);'
+		}, 750)
 	})
-	setTimeout(() => {
-		mapSection.style = 'transform: translateX(0);'
-	}, 750)
-})
+}
 
 function initRandomCountrySelector(data) {
 	randomCountry.addEventListener('click', () => {
 		const randomCountry = data[Math.floor(Math.random() * data.length)]
-		app.showCountryInfo = true
-		app.country = randomCountry.country
-		app.debt = randomCountry.debt
-		app.population = randomCountry.population[0].value
-		app.currGeoLocation = {
+		state.data.showCountryInfo = true
+		state.data.country = randomCountry.country
+		state.data.debt = randomCountry.debt
+		state.data.population = randomCountry.population[0].value
+		state.data.currGeoLocation = {
 			lat: randomCountry.lat,
 			long: randomCountry.long
 		}
-		app.selectedCountryProducts = randomCountry.food
+		state.data.selectedCountryProducts = randomCountry.food
 
 		generateChartWithCountryInfo(randomCountry)
 
@@ -71,3 +73,5 @@ const styleBeforeElement = (function(style) {
 		sheet.insertRule(selector + '{' + propText + '}', sheet.cssRules.length)
 	}
 })(document.createElement('style'))
+
+export { initInteractions }

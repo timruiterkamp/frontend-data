@@ -1,5 +1,3 @@
-import app from './vueSetup'
-
 const csvFiles = [
 	'../data/worldGeoCodes.csv',
 	'../data/europeDebt.csv',
@@ -8,7 +6,7 @@ const csvFiles = [
 
 d3.json('../data/countryItems.json')
 	.then(values => {
-		app.countryItems = values
+		state.data.countryItems = values
 		return values
 	})
 	.catch(err => err)
@@ -44,7 +42,7 @@ const filterAllData = Promise.all(csvFiles.map(url => d3.csv(url)))
 			...debtPerCountry,
 			...populationPerCountry,
 			...geoCodePerCountry,
-			...app.countryItems
+			...state.data.countryItems
 		)
 
 		return filteredDataObject
@@ -85,7 +83,7 @@ const filterAllData = Promise.all(csvFiles.map(url => d3.csv(url)))
 					.filter(d => (d ? d : ''))[0]
 			}))
 
-		app.total = filterByCountry
+		state.data.total = filterByCountry
 		return filterByCountry
 	})
 	.catch(err => err)

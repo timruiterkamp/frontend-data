@@ -2,7 +2,11 @@ mapboxgl.accessToken =
 	'pk.eyJ1Ijoibm9jbHVlNHUiLCJhIjoiY2pvZWY2ZTA5MXdkbjN3bGVicm1hZDNvZCJ9.kIU-GIm7Cl36xhEFLaPU1w'
 
 import { filterAllData } from './stateData.js'
-import app from './vueSetup'
+import { initInteractions } from './interactions'
+
+// init interactions
+initInteractions()
+
 // init mapbox
 const map = new mapboxgl.Map({
 	container: 'map',
@@ -22,9 +26,8 @@ const svg = d3
 	.append('g')
 
 map.on('load', () => {
-	app.map = map
-	app.loaded = true
-
+	state.data.map = map
+	state.data.loaded = true
 	filterAllData
 		.then(res => {
 			initSelectOption(res)
@@ -112,14 +115,14 @@ function toggleCountryInfo(d) {
 	setCountryInformationWidth('increase')
 	showCountryInformation(d)
 
-	if (app.showCountryInfo) {
+	if (state.data.showCountryInfo) {
 		generateChartWithCountryInfo(d)
 	}
 
 	map.flyTo({
 		center: [
-			app.currGeoLocation.long,
-			app.currGeoLocation.lat
+			state.data.currGeoLocation.long,
+			state.data.currGeoLocation.lat
 		],
 		zoom: currentZoomLevel * 2,
 		offset: [-300, 0],
@@ -130,12 +133,12 @@ function toggleCountryInfo(d) {
 }
 
 function showCountryInformation(data) {
-	app.showCountryInfo = true
-	app.country = data.country
-	app.debt = data.debt
-	app.population = data.population[0].value
-	app.currGeoLocation = { lat: data.lat, long: data.long }
-	app.selectedCountryProducts = data.food
+	state.data.showCountryInfo = true
+	state.data.country = data.country
+	state.data.debt = data.debt
+	state.data.population = data.population[0].value
+	state.data.currGeoLocation = { lat: data.lat, long: data.long }
+	state.data.selectedCountryProducts = data.food
 }
 
 function calculateDebtPerPerson(data) {
@@ -145,8 +148,8 @@ function calculateDebtPerPerson(data) {
 	const currentDebt = (currentDebtInEuros / population).toFixed(2)
 	const pastDebt = (pastDebtInEuros / population).toFixed(2)
 
-	app.currentDebtPerCitizen = currentDebt
-	app.pastDebtPerCitizen = pastDebt
+	state.data.currentDebtPerCitizen = currentDebt
+	state.data.pastDebtPerCitizen = pastDebt
 }
 
 function generateChartWithCountryInfo(data) {
@@ -156,13 +159,13 @@ function generateChartWithCountryInfo(data) {
 	data.food.map(food => {
 		const newFoodObject = {
 			debt: Number(
-				(app.currentDebtPerCitizen / food.price).toFixed(0)
+				(state.data.currentDebtPerCitizen / food.price).toFixed(0)
 			),
 			...food
 		}
 		const pastFoodObject = {
 			debt: Number(
-				(app.pastDebtPerCitizen / food.price).toFixed(0)
+				(state.data.pastDebtPerCitizen / food.price).toFixed(0)
 			),
 			...food
 		}
@@ -185,7 +188,7 @@ function drawBarChart(data) {
 
 	const svg = d3.select('.countryDebtChart')
 
-	if (!app.barchartIsDrawn) {
+	if (!state.data.barchartIsDrawn) {
 		const g = svg
 			.append('g')
 			.attr('class', 'layer')
@@ -244,7 +247,7 @@ function drawBarChart(data) {
 		})
 		.on('mouseout', () => d3.select('#tooltip').classed('hidden', true))
 
-	if (!app.barchartIsDrawn) {
+	if (!state.data.barchartIsDrawn) {
 		g.append('g')
 			.attr('class', 'xAxis')
 			.attr('transform', 'translate(0,' + height + ')')
@@ -290,7 +293,7 @@ function drawBarChart(data) {
 		.attr('text-anchor', 'start')
 		.text('Amount')
 
-	app.barchartIsDrawn = true
+	state.data.barchartIsDrawn = true
 	function update(data) {
 		const structuredData = d3
 			.nest()
