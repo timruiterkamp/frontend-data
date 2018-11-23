@@ -17,7 +17,7 @@ The product can be found here: [https://frontend-data.netlify.com](https://front
     * [What is the total debt of countries](#What-is-the-total-debt-of-countries )  
     * [What continent do I choose](#What-continent-do-I-choose )  
     * [How big is the population](#How-big-is-the-population )  
-    * [What are famous dishes / products per country](#What-are-famous-dishes-/-products-per-country )  
+    * [What are famous dishes / products per country](#What-are-famous-dishes--products-per-country )  
     * [Display the values](#Display-the-values)  
     * [How big is the debt per person](#How-big-is-the-debt-per-person)  
 * [Sketching journey](#Sketching-journey-️)  
@@ -28,7 +28,7 @@ The product can be found here: [https://frontend-data.netlify.com](https://front
 * [Code description](#Code-description) 
 * [Honorable mentions](#Honorable-mentions) 
 * [Sources](#Sources)  
-* [Todo / issues](#Todo-/-issues)
+* [Todo / issues](#todo--issues)
 
 
 
