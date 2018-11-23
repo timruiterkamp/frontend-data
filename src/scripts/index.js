@@ -364,5 +364,6 @@ export {
 	map,
 	generateListWithCountries,
 	generateInformationTips,
-	generateChartWithCountryInfo
+	generateChartWithCountryInfo,
+	toggleCountryInfo
 }

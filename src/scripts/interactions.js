@@ -1,5 +1,9 @@
 import { filterAllData } from './stateData.js'
-import { map, generateChartWithCountryInfo } from './index.js'
+import {
+	map,
+	generateChartWithCountryInfo,
+	toggleCountryInfo
+} from './index.js'
 
 const randomCountry = findElement('#nextItem')
 
@@ -33,17 +37,20 @@ function initInteractions() {
 function initRandomCountrySelector(data) {
 	randomCountry.addEventListener('click', () => {
 		const randomCountry = data[Math.floor(Math.random() * data.length)]
-		state.data.showCountryInfo = true
-		state.data.country = randomCountry.country
-		state.data.debt = randomCountry.debt
-		state.data.population = randomCountry.population[0].value
-		state.data.currGeoLocation = {
-			lat: randomCountry.lat,
-			long: randomCountry.long
-		}
-		state.data.selectedCountryProducts = randomCountry.food
 
-		generateChartWithCountryInfo(randomCountry)
+		if (randomCountry) {
+			state.data.showCountryInfo = true
+			state.data.country = randomCountry.country
+			state.data.debt = randomCountry.debt
+			state.data.population = randomCountry.population[0].value
+			state.data.currGeoLocation = {
+				lat: randomCountry.lat,
+				long: randomCountry.long
+			}
+			state.data.selectedCountryProducts = randomCountry.food
+
+			toggleCountryInfo(randomCountry)
+		}
 
 		document.querySelector('.map-section').style =
 			'width: 45vw; transform: translateX(0)'
