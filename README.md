@@ -28,6 +28,7 @@ The product can be found here: [https://frontend-data.netlify.com](https://front
 * [Code description](#Code-description) 
 * [Honorable mentions](#Honorable-mentions) 
 * [Sources](#Sources)  
+* [Todo / issues](#-Todo-/-issues)
 
 
 
@@ -340,6 +341,9 @@ Fun note, after the presentation I shared my code with the students and I reconi
 * [Mapbox information](https://www.mapbox.com/help/define-geocoding/)  
 * [Famous foods from wikipedia (search for country dishes)](https://wikipedia.com)  
 * [Country geocodes](https://developers.google.com/public-data/docs/canonical/countries_csv)  
+
+## Todo / issues
+[Link to issues](https://github.com/timruiterkamp/frontend-data/issues)
 
 ## License
 [MIT LICENSE](license.txt)
