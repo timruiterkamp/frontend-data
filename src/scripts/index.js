@@ -4,10 +4,8 @@ mapboxgl.accessToken =
 import { filterAllData } from './stateData.js'
 import { initInteractions } from './interactions'
 
-// init interactions
 initInteractions()
 
-// init mapbox
 const map = new mapboxgl.Map({
 	container: 'map',
 	style: 'mapbox://styles/noclue4u/cjoeoyn8u0htn2sobi8b7qy5k',
@@ -44,14 +42,12 @@ function generateInformationTips(d, selectOption) {
 		.data(d)
 		.enter()
 		.append('circle')
-		// .attr('class', d => `${trimWhiteAndLowercase(d.country)}`)
 		.on('click', d => toggleCountryInfo(d))
 		.transition()
 		.duration(0)
 		.attr('cx', d => project([+d.long, +d.lat]).x)
 		.attr('cy', d => project([+d.long, +d.lat]).y)
 
-	// Update function
 	const update = () => {
 		svg.selectAll('circle')
 			.attr('cx', d => project([+d.long, +d.lat]).x)
@@ -80,10 +76,8 @@ function generateInformationTips(d, selectOption) {
 			})
 	}
 
-	// Call the update function
 	update()
 
-	// Update on map interaction
 	map.on('viewreset', () => update())
 		.on('move', () => update())
 		.on('moveend', () => update())
@@ -295,6 +289,8 @@ function drawBarChart(data) {
 
 	state.data.barchartIsDrawn = true
 	function update(data) {
+		// https://bl.ocks.org/Andrew-Reid/64a6c1892d1893009d2b99b8abee75a7
+
 		const structuredData = d3
 			.nest()
 			.key(d => d.key)
@@ -303,7 +299,6 @@ function drawBarChart(data) {
 		x1.domain(data.map(d => d.name)).rangeRound([0, x0.bandwidth()])
 		y.domain([0, d3.max(data, d => d.debt)]).nice()
 
-		// update the y axis:
 		svg.select('.yAxis')
 			.transition()
 			.call(d3.axisLeft(y).ticks(null, 's'))
