@@ -139,7 +139,7 @@ button:hover {
 	background-color: rgba(5, 9, 36, 0.9);
 	position: absolute;
 	right: 0;
-	transform: translateX(30em);
+	transform: translateX(30vw);
 	will-change: transform;
 	transition: 1.25s ease-in-out;
 	z-index: 2;
